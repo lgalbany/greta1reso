@@ -130,8 +130,854 @@ const subjects = [
 ["Tria el plural de «le chat».",["les chats","la chats","le chates"],0,"L’article plural és «les» i el nom afegeix -s."],
 ["Què vol dir «À demain»?",["Fins demà","Bona nit","Si us plau"],0,"És un comiat fins al dia següent."]]]]]
 ].map(([id,name,icon,color,desc,topics])=>({id,name,icon,color,desc,topics:topics.map(([name,lesson,qs],t)=>({name,lesson,qs:qs.map(([text,options,answer,explanation],q)=>({id:id+'-'+t+'-'+q,text,options,answer,explanation}))}))}));
+</script><script>/* Deterministic authored practice bank. Different tasks share a conceptId so
+   exports can distinguish new concepts from practice variants of the same idea. */
+const BANK_VERSION='2026-11-24.1';
+const BANK_FACTS={};
+bankFacts('art',0,'','',`
+Punt|element visual mínim que situa una posició o concentra l’atenció|Una petita marca aïllada destaca en un full buit
+Línia|traç que pot delimitar formes o suggerir direcció i moviment|Dibuixem un recorregut continu per connectar dos llocs
+Contorn|línia que delimita exteriorment una figura|Resseguim la vora externa d’una fulla sense dibuixar-ne l’interior
+Forma geomètrica|forma definida per propietats matemàtiques regulars|Un disseny es construeix amb cercles, triangles i quadrats
+Forma orgànica|forma habitualment irregular que recorda elements naturals|Dibuixem una silueta irregular inspirada en una fulla
+Textura tàctil|qualitat de superfície que es percep amb el tacte|Passem els dits per una superfície rugosa de cartró
+Textura visual|representació gràfica que suggereix una qualitat de superfície|Una fotografia de fusta ens fa percebre vetes sense tocar-les
+Color primari en el model RYB|un dels tres colors base tradicionals de pintura: vermell, groc i blau|En un exercici de pintura amb el model tradicional RYB, triem els colors base
+Color secundari en el model RYB|color que resulta de barrejar dos primaris tradicionals|Barregem pintura groga i blava i obtenim verd
+Colors complementaris|colors oposats en un cercle cromàtic determinat|En un cercle tradicional de sis colors, comparem blau i taronja com a oposats
+Colors càlids|família cromàtica associada habitualment a vermells, taronges i grocs|Un cartell utilitza sobretot vermell, taronja i groc
+Colors freds|família cromàtica associada habitualment a blaus, verds i violetes|Una composició utilitza sobretot blau i verd blavós per suggerir frescor
+To cromàtic|qualitat que permet identificar una família de color|Distingim si un color pertany a la família dels verds o dels vermells
+Saturació|grau de puresa o intensitat cromàtica d’un color|Comparem un vermell viu amb un vermell apagat de lluminositat semblant
+Lluminositat|grau de claredat o foscor d’un color|Comparem un blau clar amb un blau fosc
+Contrast|diferència perceptible entre elements visuals|Un text blanc destaca sobre un fons gairebé negre
+Composició|organització dels elements dins d’un espai visual|Decidim on situar formes, colors i espais buits en un cartell
+Equilibri visual|distribució dels pesos visuals que dona estabilitat a una composició|Compensem una forma gran amb diverses formes petites
+Simetria axial|correspondència de formes a banda i banda d’un eix|Un dibuix té dues meitats que coincideixen en plegar-lo per una línia
+Asimetria|absència de correspondència especular entre les parts|Una composició no té les mateixes formes a cada costat d’un eix
+`);
+bankFacts('art',1,'','',`
+Enquadrament|selecció de la part de l’escena que es mostra en una imatge|Decidim quins elements entren dins la fotografia i quins en queden fora
+Pla general|enquadrament que mostra un espai ampli i situa els personatges en l’entorn|Una fotografia presenta tota una plaça i persones petites dins l’espai
+Pla sencer|enquadrament que mostra una persona de cap a peus|La figura humana apareix completa dins de la imatge
+Pla mitjà|enquadrament que mostra habitualment la persona aproximadament de cintura cap amunt|En una entrevista, veiem el tronc superior i el cap de la persona
+Primer pla|enquadrament que destaca el rostre o un element proper|La càmera omple la imatge amb el rostre d’un personatge
+Pla de detall|enquadrament molt proper d’un fragment concret|La càmera mostra només els dits que giren una clau
+Angle picat|punt de vista amb la càmera situada per damunt del motiu i orientada cap avall|Fotografiem una persona des d’una posició elevada mirant cap avall
+Angle contrapicat|punt de vista amb la càmera situada per sota del motiu i orientada cap amunt|Fotografiem un edifici des de baix mirant cap al cel
+Angle normal|punt de vista aproximadament a l’altura del motiu|La càmera mira una persona des de l’altura dels seus ulls
+Guió gràfic|seqüència de dibuixos que planifica plans d’una obra audiovisual|Abans de gravar, dibuixem les escenes amb la posició de la càmera
+Vinyeta|unitat gràfica que representa un moment o fragment d’una història de còmic|Una història dibuixada es divideix en quadres narratius
+Bafarada|espai gràfic que conté les paraules o pensaments d’un personatge|En un còmic, un contorn connectat al personatge conté el seu diàleg
+Onomatopeia|representació escrita d’un so|En un còmic, «BUM!» acompanya una explosió
+Cartell|composició visual destinada a comunicar un missatge en un suport exposat|Dissenyem una peça amb títol i imatge per anunciar un concert al passadís
+Logotip|signe gràfic basat en l’escriptura que identifica una entitat o marca|Un nom escrit amb una tipografia característica identifica una associació
+Tipografia|disseny i ús de formes de lletres per comunicar visualment|Triem una família de lletres llegible per al text d’un fullet
+Jerarquia visual|ordre d’importància establert mitjançant recursos gràfics|El títol es veu primer perquè és més gran i contrastat que el text secundari
+Retoc digital|modificació d’una imatge amb eines informàtiques|Ajustem la lluminositat i eliminem una taca d’una fotografia
+Muntatge audiovisual|organització i unió de plans en una seqüència|Ordenem fragments de vídeo per construir el relat d’un curt
+Lectura crítica d’imatges|anàlisi del context, intenció i possibles manipulacions d’una imatge|Ens preguntem qui ha creat una fotografia publicitària i què vol fer-nos creure
+`);
+bankFacts('art',2,'Dibuix geomètric i disseny','Utilitza regle i compàs per construir formes i reconèixer relacions geomètriques. Planifica dissenys pensant en la funció, la llegibilitat i les persones destinatàries.',`
+Rectes paral·leles|rectes d’un mateix pla que no es tallen|Dibuixem dues vies rectes que mantenen sempre la mateixa separació
+Rectes perpendiculars|rectes que es tallen formant angles de noranta graus|Una línia horitzontal i una vertical es creuen en angle recte
+Segment|part d’una recta limitada per dos extrems|Marquem dos punts en una recta i en conservem només el tram entre ells
+Mediatriu|recta perpendicular a un segment que passa pel seu punt mitjà|Construïm la recta que divideix un segment en dues parts iguals i el talla a noranta graus
+Bisectriu|semirecta que divideix un angle en dos angles iguals|Amb un compàs construïm una línia que parteix un angle de 60° en dos de 30°
+Circumferència|línia corba plana amb tots els punts a la mateixa distància d’un centre|Amb el compàs tracem només la vora d’una figura rodona
+Cercle|regió plana limitada per una circumferència|Pintem tota la superfície interior d’una circumferència
+Radi|segment que uneix el centre d’una circumferència amb un punt seu|Mesurem des del centre fins a la vora d’una roda ideal circular
+Diàmetre|corda que passa pel centre i equival al doble del radi|Mesurem una roda de vora a vora passant pel centre
+Triangle equilàter|triangle amb tres costats iguals|Construïm un triangle amb tres segments de cinc centímetres
+Triangle isòsceles no equilàter|triangle amb exactament dos costats iguals|Dibuixem un triangle amb costats de cinc, cinc i sis centímetres
+Triangle escalè|triangle amb els tres costats de longitud diferent|Dibuixem un triangle amb costats de quatre, cinc i sis centímetres
+Quadrat|quadrilàter amb quatre costats iguals i quatre angles rectes|Un mosaic es construeix amb peces de quatre costats iguals i angles de 90°
+Rectangle no quadrat|quadrilàter amb quatre angles rectes i dos costats de longitud diferent|Dibuixem un quadrilàter de quatre angles de 90° amb costats de tres i cinc centímetres
+Rombe no quadrat|paral·lelogram amb quatre costats iguals i sense angles rectes|Un quadrilàter té els quatre costats iguals i angles de 60° i 120°
+Polígon regular|polígon amb tots els costats i tots els angles iguals|Construïm un hexàgon que té sis costats iguals i sis angles iguals
+Escala d’ampliació|relació que representa un objecte més gran que la seva mida real|Un detall d’un cargol es dibuixa a escala 5:1
+Escala de reducció|relació que representa un objecte més petit que la seva mida real|Una casa es dibuixa a escala 1:100
+Mòdul gràfic|unitat visual que es repeteix per construir una composició|Repetim una mateixa forma per crear un patró tèxtil
+Tessel·lació|recobriment d’una superfície amb peces sense buits ni superposicions|Cobrim un pla amb hexàgons regulars que encaixen completament
+`);
+bankFacts('ef',0,'','',`
+Escalfament|fase inicial d’activació progressiva per preparar l’activitat|Abans d’una cursa fem moviments suaus i augmentem gradualment la intensitat
+Part principal|fase d’una sessió dedicada als objectius centrals de treball|Després d’activar-nos, practiquem els exercicis previstos per millorar la resistència
+Tornada a la calma|fase final de reducció gradual de l’esforç|Acabem una sessió intensa caminant suaument i recuperant el ritme respiratori
+Resistència|capacitat de mantenir un esforç durant un temps|Volem poder córrer de manera continuada durant més estona a un ritme adequat
+Força muscular|capacitat de produir tensió per vèncer o sostenir resistències|Un exercici requereix empènyer o sostenir una càrrega adaptada
+Velocitat|capacitat de fer una acció o desplaçament en poc temps|Practiquem una sortida ràpida per recórrer una distància curta
+Mobilitat articular|capacitat de moviment disponible en una articulació|Explorem l’amplitud de moviment de l’espatlla sense dolor
+Freqüència cardíaca|nombre de batecs del cor per unitat de temps|Comptem els batecs durant un minut després d’un esforç
+Recuperació|procés de retorn progressiu a un estat adequat després de l’esforç|Deixem un període suficient entre activitats exigents perquè el cos es refaci
+Progressió|augment gradual i adaptat de la dificultat o càrrega|Una rutina incrementa la durada a poc a poc segons la resposta individual
+Regularitat|continuïtat de la pràctica al llarg del temps|Distribuïm l’activitat física en diverses sessions periòdiques
+Hidratació|reposició d’aigua segons necessitats i condicions|Fem pauses per beure aigua durant una activitat, especialment si fa calor
+Alimentació variada|patró que incorpora diferents grups d’aliments per cobrir necessitats|Planifiquem àpats amb diversitat d’aliments sense dependre d’un únic producte
+Descans nocturn|període de son que contribueix a la recuperació i al benestar|Organitzem els horaris per poder dormir suficient abans d’un dia actiu
+Higiene postural|hàbits de posició i moviment que redueixen sobrecàrregues innecessàries|Ajustem la motxilla i la manera de seure per repartir millor les càrregues
+Respiració conscient|atenció voluntària al ritme respiratori per regular l’activació|Després d’un joc, observem la respiració i en reduïm el ritme de manera còmoda
+Percepció de l’esforç|valoració subjectiva de la intensitat que sent una persona|Expliquem si una activitat ens sembla suau, moderada o molt exigent
+Adaptació individual|ajust de la pràctica a les capacitats i necessitats de cada persona|Una mateixa tasca ofereix distàncies diferents perquè tothom hi participi amb seguretat
+Sedentarisme|patró amb molt temps de vigília assegut o amb baixa despesa energètica|Analitzem una jornada amb moltes hores seguides asseguts i poques pauses de moviment
+Benestar corporal|relació de cura i respecte envers el propi cos|Valorem com ens sentim i evitem comparar el nostre cos despectivament amb el dels altres
+`);
+bankFacts('ef',1,'','',`
+Cooperació|coordinació d’esforços per assolir una finalitat compartida|Tot un grup ha de transportar una pilota sense que caigui i sense competir internament
+Joc net|actitud de respecte a les regles, les persones i l’esperit del joc|Un equip reconeix una falta pròpia encara que l’àrbitre no l’hagi vista
+Inclusió|organització que permet la participació de persones amb necessitats diferents|Adaptem una norma perquè una companya també pugui participar activament
+Comunicació assertiva|expressió clara i respectuosa de necessitats o desacords|Una jugadora diu que necessita una pausa sense atacar ningú
+Escolta activa|atenció al missatge d’una altra persona per comprendre’l|Abans de respondre a un desacord, deixem parlar i comprovem què ha dit el company
+Resolució dialogada|gestió d’un conflicte mitjançant conversa i cerca d’acords|Dos equips aturen una discussió i pacten com reprendre el joc
+Respecte arbitral|tracte respectuós a qui aplica les normes del joc|Una jugadora demana aclariments sobre una decisió sense insults ni amenaces
+Responsabilitat d’equip|compliment del paper propi en benefici del grup|Una persona torna el material al lloc acordat després de l’activitat
+Orientació|capacitat de situar-se i seguir direccions en un entorn|Utilitzem un mapa i punts de referència per trobar una fita
+Mapa|representació reduïda i simbòlica d’un espai|Consultem un plànol del parc amb camins i punts de referència
+Brúixola|instrument que indica una direcció de referència magnètica|Una agulla ens ajuda a identificar el nord magnètic en una sortida
+Fita d’orientació|punt de control que s’ha de localitzar en un recorregut|En una cursa busquem una balisa marcada al mapa
+Planificació d’itinerari|preparació del recorregut segons distància, terreny i participants|Abans de sortir, estudiem el camí i si s’adapta al grup
+Previsió meteorològica|informació anticipada sobre el temps que ajuda a preparar una sortida|Consultem si hi haurà pluja o calor abans d’una ruta
+Material adequat|equipament ajustat a l’activitat i a les condicions|Preparem calçat, roba i aigua segons el terreny i la previsió
+Respecte de l’entorn|conducta que evita danyar el medi durant la pràctica|Ens enduem els residus i no arrenquem plantes durant una excursió
+Senyalització del recorregut|marques o indicacions que orienten sobre el camí|Seguim els senyals del sender sense sortir de l’itinerari establert
+Treball per parelles|organització en què dues persones col·laboren en una tasca|Dues persones alternen els papers d’executar i observar una acció
+Autoavaluació|valoració del propi procés segons criteris coneguts|Després de la pràctica, reviso si he col·laborat i què puc millorar
+Coevaluació|valoració entre participants segons criteris compartits|Una companya observa una tasca i dona comentaris a una altra amb una pauta acordada
+`);
+bankFacts('ef',2,'Habilitats motrius, esports i expressió','Relaciona desplaçaments, salts, llançaments i recepcions amb situacions de joc. En els esports, combina tècnica, decisions i respecte. Utilitza el cos també per comunicar i crear.',`
+Coordinació motriu|organització de moviments per executar una acció amb eficàcia|Sincronitzem braços i cames per superar un recorregut
+Equilibri estàtic|manteniment d’una postura estable sense desplaçament|Mantenim una posició sobre una cama sense caminar
+Equilibri dinàmic|manteniment de l’estabilitat durant un moviment|Caminem sobre una línia estreta conservant el control corporal
+Salt|acció d’impulsar-se per separar el cos del suport|Flexionem les cames i ens impulsem per superar una petita zona marcada
+Llançament|acció d’impulsar un objecte cap a una direcció|Enviem una pilota amb la mà cap a una diana
+Recepció|acció de controlar un objecte que arriba|Atrapem una pilota enviada per una altra persona
+Bot de bàsquet|acció de fer rebotar controladament la pilota amb una mà|Una jugadora avança fent rebotar la pilota a terra amb la mà
+Passada|enviament intencionat de la pilota a una persona de l’equip|Un jugador envia la pilota a una companya desmarcada
+Desmarcatge|moviment per alliberar-se de l’oponent i crear una opció de joc|Una jugadora busca un espai lliure per rebre una passada
+Marcatge|acció defensiva de controlar un oponent o la seva zona d’influència|Una defensora es col·loca per dificultar que una atacant rebi la pilota
+Ocupació d’espais|distribució del grup per aprofitar el terreny de joc|Un equip se separa adequadament per crear línies de passada
+Tàctica|elecció de decisions per respondre a una situació de joc|Una jugadora decideix passar en lloc de llançar perquè hi ha una companya millor situada
+Tècnica esportiva|manera d’executar una habilitat específica d’un esport|Practiquem la posició de les mans en una passada de voleibol
+Servei de voleibol|acció que posa la pilota en joc des de darrere de la línia de fons|Una jugadora inicia el punt enviant la pilota des de la zona de servei
+Toc d’avantbraços|gest de voleibol que contacta la pilota amb els avantbraços units|Rebem una pilota baixa amb els braços estesos i junts
+Toc de dits|gest de voleibol que controla la pilota amb els dits per sobre del front|Una jugadora prepara una passada alta amb les mans damunt del front
+Expressió corporal|ús de moviments i postures per comunicar idees o emocions|Representem alegria o sorpresa amb el cos sense parlar
+Gest|moviment expressiu que comunica informació|Una mà alçada comunica que es demana torn
+Coreografia|organització planificada de moviments en una seqüència|Un grup prepara passos i figures ordenats per a una peça musical
+Ritme corporal|organització temporal dels moviments del cos|Coordinem passos i palmades amb una pulsació regular
+`);
+bankFacts('val',0,'','',`
+Dignitat humana|valor inherent de tota persona que exigeix respecte|Defensem que ningú no ha de ser humiliat, independentment del seu origen
+Drets humans|drets universals que corresponen a totes les persones|Una norma bàsica protegeix totes les persones sense distingir nacionalitat
+Igualtat de drets|reconeixement dels mateixos drets fonamentals a totes les persones|Defensem que nois i noies tinguin els mateixos drets a l’educació
+Equitat|atenció a necessitats diferents per afavorir oportunitats justes|Proporcionem un suport específic a qui el necessita per poder participar
+Discriminació|tracte desfavorable injustificat per característiques personals o de grup|S’exclou una persona d’una activitat només pel seu origen
+Prejudici|judici previ sobre persones o grups sense coneixement suficient|Algú dona per fet que una companya serà dolenta en una tasca pel grup al qual pertany
+Estereotip|idea simplificada i generalitzadora sobre un grup|Una publicitat atribueix el mateix gust a tots els nois o a totes les noies
+Empatia|capacitat d’intentar comprendre la perspectiva i els sentiments d’altres persones|Abans d’opinar, provem d’entendre com s’ha sentit una companya exclosa
+Respecte|consideració pels drets i la dignitat d’altres persones|Escoltem una idea diferent sense menysprear qui la defensa
+Tolerància|acceptació de diferències compatibles amb els drets humans|Convivim amb creences diferents sense imposar-ne una a tothom
+Solidaritat|compromís de suport a altres persones davant necessitats o injustícies|Un grup s’organitza per ajudar persones afectades per una inundació
+Responsabilitat|assumpció dels deures i de les conseqüències dels propis actes|Reconec que he fet malbé material i contribueixo a reparar-lo
+Privacitat|dret a controlar aspectes de la vida personal i la informació pròpia|Una persona decideix que una conversa personal no es difongui
+Consentiment|acord lliure i informat que es pot retirar|Demanem permís abans de publicar la imatge d’una altra persona
+Assetjament|conducta repetida de maltractament amb desequilibri de poder|Una alumna rep burles i exclusió persistents d’un grup que l’intimida
+Suport a la víctima|acompanyament i ajuda a qui pateix una agressió o una injustícia|Escoltem qui rep burles i busquem ajuda d’un adult de confiança
+Diàleg|intercanvi respectuós per comprendre i buscar acords|Dues persones exposen les seves raons i s’escolten per resoldre un desacord
+Mediació|ajuda d’una tercera persona imparcial per facilitar un acord|Una persona neutral acompanya dues parts perquè resolguin un conflicte
+Inclusió|organització que permet participar sense exclusions injustificades|Adaptem una activitat perquè hi puguin intervenir persones amb necessitats diverses
+Convivència|vida compartida basada en normes, respecte i gestió dels conflictes|Un grup acorda com compartir espais i resoldre desacords a l’aula
+`);
+bankFacts('val',1,'','',`
+Argument|raó que es presenta per defensar una afirmació|Proposem reparar una bicicleta perquè això genera menys residus
+Conclusió|afirmació que es defensa o s’obté a partir de raons|Després d’exposar dades, afirmem que cal ampliar les zones d’ombra
+Premissa|afirmació que serveix de punt de partida d’un raonament|Utilitzem «totes les persones tenen dret a ser escoltades» com a base d’una proposta
+Evidència|dada o observació que dona suport a una afirmació|Aportem mesures de temperatura per justificar que falta ombra al pati
+Contraargument|raó que qüestiona una argumentació o hi ofereix una objecció|Una companya respon a la proposta indicant una dificultat que cal valorar
+Fet|afirmació sobre la realitat que es pot contrastar|Comprovem que hi ha dotze arbres al pati mitjançant un recompte
+Opinió|valoració o punt de vista personal|Una persona considera que una pel·lícula és la millor que ha vist
+Font fiable|origen d’informació amb garanties de competència, transparència i contrast|Per saber un horari consultem la pàgina oficial actualitzada del servei
+Verificació|comprovació de la validesa d’una informació|Busquem la data, l’autoria i altres proves abans de creure una notícia
+Desinformació|informació falsa o enganyosa difosa amb intenció de confondre|Una campanya inventa dades per manipular deliberadament l’opinió pública
+Rumor|informació que circula sense confirmació suficient|S’estén un missatge sobre una excursió cancel·lada sense cap comunicació del centre
+Biaix de confirmació|tendència a afavorir informació que encaixa amb les creences pròpies|Una persona només busca notícies que donen la raó a la seva opinió inicial
+Atac personal|crítica dirigida a la persona en lloc d’examinar les seves raons|Algú rebutja una proposta insultant qui l’ha presentada
+Generalització precipitada|conclusió sobre un conjunt a partir de casos insuficients|Després de veure una sola experiència, algú afirma que totes seran iguals
+Falsa dicotomia|presentació de només dues alternatives quan n’hi ha més|Algú diu que només podem triar entre dues solucions i ignora altres opcions possibles
+Apel·lació a la popularitat|ús del nombre de persones que creuen una cosa com si demostrés que és certa|Un anunci assegura que un producte és el millor només perquè molta gent el compra
+Pensament crític|examen raonat de proves, supòsits i conclusions|Abans de decidir, revisem la qualitat de les raons i si hi ha alternatives
+Autocrítica|revisió de les pròpies idees o accions per detectar errors i millorar|Canviem una opinió pròpia després de reconèixer que es basava en dades febles
+Incertesa|grau de desconeixement o manca de seguretat sobre una qüestió|Admetem que les dades disponibles encara no permeten una resposta definitiva
+Debat respectuós|intercanvi d’arguments amb torns i respecte entre participants|Dues posicions oposades es confronten sense insults i amb temps de paraula equilibrat
+`);
+bankFacts('val',2,'Ciutadania, sostenibilitat i món digital','Relaciona les decisions individuals amb el bé comú. Participa de manera informada, redueix impactes ambientals i protegeix les dades i les persones en els entorns digitals.',`
+Democràcia|sistema de govern basat en participació política i garanties de drets|La ciutadania participa en decisions públiques amb llibertats i controls del poder
+Participació|intervenció de les persones en assumptes compartits|L’alumnat presenta propostes en una assemblea per millorar el centre
+Representació|actuació d’una persona escollida per expressar interessos d’un grup|Una delegada transmet a una reunió les propostes de la classe
+Pluralisme|reconeixement de la diversitat de posicions i interessos en una societat|En un consell s’escolten propostes diferents sense exigir una opinió única
+Transparència|accés clar a informació sobre decisions i ús de recursos|Una associació explica públicament com ha utilitzat el pressupost
+Bé comú|conjunt de condicions i recursos que afavoreixen la comunitat|Valorem una biblioteca pública pel servei que ofereix a persones diverses
+Servei públic|prestació orientada a necessitats col·lectives sota responsabilitat pública|Un ajuntament organitza un servei de recollida de residus per a la població
+Consum responsable|decisió de compra que considera necessitats i impactes socials i ambientals|Abans de comprar, valorem si realment ho necessitem i quant durarà
+Reducció de residus|prevenció de la generació de deixalles|Utilitzem una ampolla reutilitzable per evitar envasos d’un sol ús
+Reutilització|nou ús d’un producte sense transformar-lo en matèria primera|Fem servir un pot buit com a recipient per guardar llapis
+Reparació|acció de restaurar la funció d’un objecte avariat|Arreglem una cremallera per continuar fent servir una motxilla
+Reciclatge|transformació de residus en materials que poden tornar-se a utilitzar|El paper recollit es processa per fabricar paper nou
+Petjada ecològica|indicador de demanda humana sobre recursos i capacitat bioproductiva|Estudiem la superfície necessària per sostenir un patró de consum i absorbir part dels seus residus
+Mobilitat sostenible|desplaçaments que busquen reduir impactes ambientals i socials|Triem caminar o transport col·lectiu per reduir l’ús innecessari del cotxe
+Justícia ambiental|repartiment just de beneficis i riscos ambientals|Preguntem si la contaminació afecta desproporcionadament els barris amb menys recursos
+Dada personal|informació que identifica o pot identificar una persona|Un número de telèfon associat a una persona permet contactar-la i identificar-la
+Permís de publicació|autorització per difondre un contingut personal concret|Abans de compartir una foto d’una companya, demanem si hi està d’acord
+Netiqueta|normes de respecte i convivència en comunicació digital|En un fòrum responem amb respecte i evitem missatges humiliants
+Ciberassetjament|assetjament repetit a través de mitjans digitals|Un grup difon burles persistents sobre una companya en una xarxa social
+Desconnexió digital|gestió de períodes sense ús de dispositius per afavorir descans i altres activitats|Acordem estones sense pantalles per poder descansar i conversar
+`);
+bankFacts('tec',0,'','',`
+Necessitat|problema o demanda que justifica un projecte tecnològic|Abans de construir un suport, definim què necessita la persona que l’utilitzarà
+Especificació|condició concreta que ha de complir una solució|Establim que el suport ha d’aguantar un llibre d’un quilogram
+Esbós|dibuix inicial ràpid que serveix per explorar una idea|Fem a mà un primer dibuix sense mides precises de la solució
+Croquis|dibuix a mà alçada amb informació i mides suficients per entendre un objecte|Dibuixem una peça a mà i hi indiquem les seves dimensions
+Prototip|primera versió física o funcional d’una solució destinada a provar-la|Construïm un model de cartró per comprovar si el suport és estable
+Avaluació del producte|comprovació de si una solució compleix les especificacions|Provem si el suport aguanta el pes exigit i si no bolca
+Planificació|organització de tasques, recursos i temps abans de l’execució|Preparem una llista ordenada de passos, materials i terminis de construcció
+Pressupost|estimació del cost d’un projecte|Calculem quant costaran els materials i components abans de comprar-los
+Fusta|material d’origen vegetal amb fibres i propietats segons la direcció|Triem un tauler procedent d’un arbre per construir una prestatgeria
+Metall|material generalment bon conductor i susceptible de deformació plàstica|Un fil de coure permet conduir el corrent i es pot doblegar
+Plàstic|material basat en polímers que es pot conformar de diverses maneres|Fabriquem una carcassa amb un polímer modelable
+Material ceràmic|material inorgànic no metàl·lic habitualment dur i fràgil|Una rajola d’argila cuita resisteix el desgast però es pot trencar amb un cop
+Duresa|resistència d’un material a ser ratllat o penetrat|Comparem com de fàcil és ratllar dues mostres amb una punta
+Tenacitat|capacitat d’un material d’absorbir energia abans de trencar-se|Un material suporta un impacte i es deforma abans de trencar-se
+Fragilitat|tendència d’un material a trencar-se amb poca deformació prèvia|Una peça de vidre es trenca de cop sense deformar-se gaire
+Elasticitat|capacitat de recuperar la forma després de retirar una força dins d’un límit|Una goma recupera aproximadament la seva longitud quan deixem d’estirar-la
+Plasticitat|capacitat de mantenir una deformació sense trencar-se|Una peça d’argila conserva la forma que li donem
+Ductilitat|capacitat de deformar-se en fils|Un metall es treballa fins a obtenir un cable fi
+Mal·leabilitat|capacitat de deformar-se en làmines|Un metall s’aplana fins a formar una làmina
+Unió desmuntable|unió que permet separar les peces sense destruir-les|Muntem dues peces amb cargols que després podem retirar
+`);
+bankFacts('tec',1,'','',`
+Algoritme|seqüència ordenada de passos per resoldre una tasca|Escrivim instruccions precises per ordenar una llista
+Seqüència|execució d’instruccions una darrere l’altra|Un programa primer demana el nom i després mostra una salutació
+Condicional|estructura que executa una acció segons si es compleix una condició|El programa diu «si plou, mostra el paraigua»
+Bucle|estructura que repeteix instruccions|Un robot repeteix deu vegades l’ordre d’avançar
+Variable|espai identificat per un nom que emmagatzema un valor modificable|El marcador punts canvia durant una partida
+Constant|valor identificat que no es modifica durant l’execució prevista|Un programa fixa IVA com a valor que no canviarà mentre s’executa
+Entrada|dada que un sistema rep de l’exterior|L’usuari escriu la seva edat al teclat
+Sortida|informació que un sistema presenta o envia a l’exterior|El programa mostra el resultat d’un càlcul a la pantalla
+Depuració|procés de localitzar i corregir errors en un programa|Revisem per què el robot gira en la direcció equivocada i corregim el codi
+Operador de comparació|símbol o instrucció que compara valors|En una condició, comprovem si punts és més gran que 10
+Operador lògic AND|operador que només és cert quan les dues condicions són certes|Una porta s’obre només si la clau és correcta i el sensor està activat
+Operador lògic OR|operador que és cert si almenys una condició és certa|Un avís s’activa si hi ha fum o si la temperatura supera el límit
+Fitxer|unitat digital que emmagatzema dades amb un nom|Desem un document anomenat treball.txt
+Carpeta|contenidor que organitza fitxers i altres carpetes|Agrupem els documents de ciències en un directori
+Còpia de seguretat|còpia de dades destinada a recuperar-les si l’original es perd|Dupliquem documents importants en un suport independent
+Contrasenya robusta|clau llarga i difícil d’endevinar que no es reutilitza|Protegim un compte amb una frase llarga exclusiva
+Doble factor|verificació que combina dos tipus de prova d’identitat|Per entrar al compte cal la contrasenya i una comprovació addicional en un altre dispositiu
+Phishing|engany que intenta obtenir dades o credencials suplantant una entitat|Un correu que imita un banc exigeix que revelis la contrasenya
+Llicència d’ús|condicions que indiquen com es pot utilitzar una obra o un programa|Consultem si una imatge permet reproducció i quina atribució cal
+Empremta digital|rastre d’informació que deixen les activitats a internet|Analitzem les dades que deixen publicacions, comentaris i registres de navegació
+`);
+bankFacts('tec',2,'Estructures, mecanismes i circuits','Les estructures suporten esforços i necessiten estabilitat. Els mecanismes transmeten o transformen moviment. Un circuit necessita un camí tancat, una font i components adequats.',`
+Estructura|conjunt d’elements que suporta càrregues i manté una forma|Les barres d’un pont sostenen el pes i donen forma al conjunt
+Càrrega|força que actua sobre una estructura|El pes dels llibres actua sobre una prestatgeria
+Tracció|esforç que tendeix a allargar una peça|Un cable estirat pels dos extrems suporta un esforç d’allargament
+Compressió|esforç que tendeix a escurçar una peça|Una columna suporta un pes que l’empeny pels seus extrems
+Flexió|esforç que tendeix a corbar una peça|Una lleixa carregada de llibres es corba al centre
+Torsió|esforç que tendeix a retorçar una peça|Girem els dos extrems d’una barra en sentits oposats
+Cisallament|esforç que tendeix a tallar per desplaçament de parts properes|Les dues fulles d’unes tisores fan lliscar seccions del material en sentits oposats
+Triangulació|ús de triangles per donar rigidesa a una estructura|Afegim diagonals a un marc rectangular perquè no es deformi fàcilment
+Centre de gravetat|punt d’aplicació de la resultant del pes d’un cos|Estudiem on actua globalment el pes d’un objecte per valorar si bolcarà
+Palanca|barra rígida que gira al voltant d’un punt de suport|Una barra permet aixecar una càrrega recolzant-se en un fulcre
+Politja fixa|roda amb canal que permet canviar la direcció d’una força sense avantatge ideal de força|Estirem una corda cap avall per elevar una càrrega amb una roda fixa al sostre
+Pla inclinat|superfície en pendent que permet elevar una càrrega amb menys força al llarg de més recorregut|Utilitzem una rampa per pujar un objecte fins a una plataforma
+Engranatges|rodes dentades que transmeten moviment per contacte entre dents|Dues rodes amb dents encaixades transmeten el gir
+Transmissió per corretja|mecanisme que transmet moviment entre politges mitjançant una banda|Dues politges separades giren connectades per una banda flexible
+Pinyó i cremallera|mecanisme que transforma gir en moviment rectilini o a l’inrevés|Una roda dentada fa desplaçar una barra dentada recta
+Biela i manovella|mecanisme que relaciona gir i moviment alternatiu|Una manovella fa anar i tornar una barra mitjançant una biela
+Generador elèctric|component que subministra energia elèctrica al circuit|Una pila proporciona energia a una bombeta en un muntatge escolar
+Receptor elèctric|component que transforma energia elèctrica en una altra forma|Un petit motor transforma energia elèctrica en moviment
+Interruptor|component que obre o tanca voluntàriament el pas del corrent|Premem un comandament que separa o uneix dos contactes
+Curtcircuit|connexió de resistència molt baixa que pot provocar un corrent excessiu|Els dos terminals d’una pila es connecten gairebé directament sense un receptor adequat
+`);
+bankFacts('mus',0,'','',`
+Pols|pulsació regular que serveix de referència temporal|Marquem amb el peu batecs regulars mentre sona una cançó
+Ritme|organització de durades i accents en el temps|Piquem una combinació de sons llargs, curts i silencis
+Tempo|velocitat de la pulsació musical|Comparem si una peça s’interpreta més ràpidament o més lentament
+Compàs|organització periòdica dels polsos en grups|Agrupem la pulsació en cicles de tres temps
+Compàs de 2/4|compàs amb dos temps de negra|Un fragment organitza cada compàs amb dues pulsacions de negra
+Compàs de 3/4|compàs amb tres temps de negra|Un vals senzill agrupa cada compàs en tres pulsacions de negra
+Compàs de 4/4|compàs amb quatre temps de negra|Una partitura indica quatre pulsacions de negra per compàs
+Rodona|figura que dura quatre negres en el sistema habitual|Busquem la figura de durada equivalent a quatre pulsacions de negra
+Blanca|figura que dura dues negres|Busquem la figura equivalent a dues pulsacions de negra
+Negra|figura de referència que equival a dues corxeres|Dues corxeres s’ajunten per ocupar la durada d’aquesta figura
+Corxera|figura que dura la meitat d’una negra|Busquem una figura de durada igual a mig temps de negra
+Semicorxera|figura que dura la quarta part d’una negra|Quatre figures iguals ocupen juntes una negra
+Silenci musical|signe que indica una durada sense so|La partitura demana no produir so durant una pulsació
+Pentagrama|conjunt de cinc línies i quatre espais per escriure notes|Escrivim les notes sobre cinc línies horitzontals paral·leles
+Clau de sol|signe que fixa la nota sol a la segona línia del pentagrama|Al començament del pentagrama, un signe situa sol a la segona línia
+Sostingut|alteració que apuja una nota un semitò|Un signe davant d’una nota demana tocar-la mig to més alta
+Bemoll|alteració que abaixa una nota un semitò|Un signe davant d’una nota demana tocar-la mig to més baixa
+Bequadre|alteració que anul·la una alteració anterior en el seu àmbit d’efecte|Una nota que estava alterada ha de tornar a la seva altura natural
+Puntet|signe que augmenta la durada d’una figura en la meitat del seu valor|Una negra passa a durar una negra més una corxera gràcies a un punt
+Lligadura de prolongació|línia que uneix notes de la mateixa altura i en suma les durades|Dues notes iguals s’interpreten com un únic so sostingut
+`);
+bankFacts('mus',1,'','',`
+Altura|qualitat del so que diferencia greu i agut|Comparem una nota baixa d’un contrabaix amb una nota alta d’un flautí
+Intensitat|qualitat del so relacionada amb fort i fluix|La mateixa nota s’interpreta primer suau i després amb més volum
+Durada|qualitat del so que diferencia sons llargs i curts|Comparem un so mantingut cinc segons amb un so molt breu
+Timbre|qualitat que permet distingir fonts sonores que fan una mateixa nota|Diferenciem un violí i una flauta tot i tocar la mateixa nota
+Piano|indicació de dinàmica que demana tocar fluix|La partitura mostra p i cal reduir la intensitat
+Forte|indicació de dinàmica que demana tocar fort|La partitura mostra f i cal augmentar la intensitat respecte d’un passatge piano
+Crescendo|augment gradual de la intensitat|Una frase comença suau i es fa progressivament més forta
+Diminuendo|disminució gradual de la intensitat|Una frase comença forta i es va fent més suau
+Melodia|successió de sons percebuda com una línia musical|Cantes la línia principal d’una cançó sense l’acompanyament
+Harmonia|organització de sons simultanis i les seves relacions|Escoltem diversos sons que sonen alhora formant acords
+Acord|conjunt de tres o més notes diferents que sonen conjuntament en l’harmonia tonal bàsica|Es toquen alhora do, mi i sol com a unitat harmònica
+Interval|distància d’altura entre dues notes|Comparem la separació entre do i sol
+Escala|successió ordenada de notes segons un sistema d’altures|Interpretem do, re, mi, fa, sol, la, si i do en ordre
+Ostinato|patró breu que es repeteix de manera persistent|Un petit motiu rítmic es repeteix sota tota la cançó
+Uníson|execució simultània de la mateixa línia i altura musical|Diverses veus canten les mateixes notes al mateix temps i en la mateixa altura
+Cànon|composició en què una veu imita una altra entrant més tard|Un grup comença la mateixa melodia uns compassos després d’un altre
+Monodia|textura amb una sola línia melòdica sense acompanyament harmònic|Una persona canta una melodia sola sense instruments ni altres veus
+Polifonia|textura que combina diverses línies melòdiques amb independència|Dues melodies diferents sonen simultàniament i mantenen un paper propi
+Homofonia|textura en què veus amb notes diferents avancen amb un ritme semblant|Un cor canta acords amb les síl·labes i els ritmes alineats
+Audició activa|escolta atenta amb una finalitat d’observació musical|Escoltem una peça per identificar-ne els canvis d’intensitat i les entrades dels instruments
+`);
+bankFacts('mus',2,'Instruments, formes i patrimoni','Classifica instruments segons com produeixen el so i reconeix agrupacions i formes senzilles. Escolta repertoris de diverses cultures amb respecte i descriu el que sents amb vocabulari musical.',`
+Violí|instrument de corda fregada de registre agut de la família del violí|Una intèrpret produeix el so fregant amb un arc les cordes d’un violí
+Violoncel|instrument de corda fregada que habitualment es toca assegut entre les cames|Un músic frega amb arc un instrument de corda recolzat a terra amb una pica i sostingut entre les cames
+Guitarra|instrument de corda polsada que habitualment té sis cordes|Una intèrpret pessiga sis cordes sobre una caixa amb mànec i trasts
+Arpa|instrument de corda polsada amb nombroses cordes esteses en un marc|Una intèrpret pinça les cordes d’un gran instrument de marc triangular
+Piano|instrument de teclat en què martells percudeixen cordes|En prémer tecles, uns martells colpegen cordes dins d’un instrument acústic
+Flauta travessera|instrument de vent amb embocadura de bisell i posició transversal|El músic bufa sobre un orifici lateral i sosté el tub de costat
+Clarinet|instrument de vent fusta amb una llengüeta simple|Una llengüeta única vibra contra l’embocadura d’un tub amb claus
+Oboè|instrument de vent fusta que utilitza una llengüeta doble|Un tub de registre agut o mitjà produeix el so amb dues làmines petites de canya juntes
+Trompeta|instrument de vent metall amb embocadura on vibren els llavis|Un instrument agut de metall produeix el so amb vibració dels llavis i habitualment tres pistons
+Trombó|instrument de vent metall que habitualment modifica la longitud amb una vara|Una intèrpret llisca una vara per canviar les notes d’un instrument de metall
+Timbales|instruments de percussió de membrana amb altura afinable|Un percussionista toca grans calderes amb pedals per ajustar-ne l’afinació
+Xilòfon|instrument de percussió amb làmines de fusta afinades|Colpegem làmines de fusta de diferents longituds amb baquetes
+Caixa|tambor amb bordons que vibren contra una membrana|Un tambor produeix un so vibrant característic gràcies als bordons inferiors
+Cor|agrupació de persones que canten conjuntament|Diverses persones interpreten una obra amb les seves veus sota una direcció comuna
+Orquestra simfònica|agrupació instrumental que combina corda, vent i percussió|Una gran agrupació reuneix violins, fustes, metalls i percussió
+Banda de música|agrupació formada principalment per instruments de vent i percussió|Una agrupació amb clarinets, trompetes, trombons i percussió desfila sense secció habitual de corda fregada
+Forma binària|estructura musical amb dues seccions principals diferents, A i B|Una peça presenta dues parts contrastants organitzades com A i B
+Forma ternària|estructura de tres seccions en què sovint torna la primera, A B A|Una peça exposa una part A, en presenta una de contrastant i recupera A
+Rondó|forma en què una secció recurrent alterna amb episodis diferents|Una peça segueix un esquema com A B A C A
+Cobla|agrupació instrumental catalana vinculada especialment a la sardana|Una agrupació amb flabiol, tibles, tenores, metalls i contrabaix acompanya sardanes
+`);
+bankFacts('bio',0,'','',`
+Cèl·lula|unitat estructural i funcional bàsica dels éssers vius|Al microscopi observem les unitats que formen un teixit
+Membrana plasmàtica|embolcall cel·lular que regula intercanvis amb l’exterior|Estudiem la barrera que controla què entra i surt d’una cèl·lula
+Citoplasma|medi interior cel·lular on hi ha components i es produeixen reaccions|Observem l’interior d’una cèl·lula entre la membrana i els seus orgànuls
+Nucli|compartiment de les cèl·lules eucariotes que conté la major part de l’ADN|Localitzem on es guarda la major part del material genètic d’una cèl·lula animal
+Cloroplast|orgànul on es fa la fotosíntesi en plantes i algues|Identifiquem l’orgànul verd que capta llum en una fulla
+Paret cel·lular|coberta externa rígida present en cèl·lules vegetals, fongs i molts microorganismes|Una cèl·lula vegetal té una capa rígida més enllà de la membrana
+Organisme unicel·lular|ésser viu format per una sola cèl·lula|Una ameba fa totes les funcions vitals amb una única cèl·lula
+Organisme pluricel·lular|ésser viu format per moltes cèl·lules|Un roure té cèl·lules especialitzades en diferents teixits
+Fotosíntesi|procés que utilitza energia lluminosa per fabricar matèria orgànica a partir de matèria inorgànica|Una planta utilitza llum, aigua i diòxid de carboni per produir sucres
+Nutrició heteròtrofa|obtenció de matèria orgànica a partir d’altres éssers vius o de les seves restes|Un bolet obté nutrients de la matèria orgànica del sòl
+Productor|organisme que fabrica matèria orgànica a partir de matèria inorgànica|En una xarxa tròfica, una alga fabrica la seva pròpia matèria orgànica
+Consumidor primari|organisme que s’alimenta directament de productors|Una eruga menja les fulles d’una planta
+Consumidor secundari|organisme que s’alimenta de consumidors primaris|Una granota menja una eruga herbívora
+Descomponedor|organisme que transforma restes orgàniques i ajuda a retornar nutrients al medi|Fongs i bacteris degraden les fulles mortes d’un bosc
+Població|conjunt d’individus de la mateixa espècie que viuen en un lloc|Comptem tots els conills d’una mateixa espècie que viuen en una illa
+Comunitat|conjunt de poblacions de diferents espècies que comparteixen un lloc|Estudiem conjuntament arbres, ocells, fongs i insectes d’un bosc
+Ecosistema|conjunt d’éssers vius, medi físic i relacions en un lloc|Analitzem els organismes d’un estany, la seva aigua i les relacions entre tots aquests elements
+Factor abiòtic|component físic o químic no viu d’un ecosistema|Mesurem la temperatura i la salinitat d’un estany
+Depredació|relació en què un organisme captura i consumeix un altre|Una òliba captura un ratolí per alimentar-se
+Mutualisme|relació entre espècies en què totes dues obtenen un benefici|Una abella obté nèctar i alhora transporta pol·len entre flors
+`);
+bankFacts('bio',1,'','',`
+Hipòtesi|explicació provisional que es pot posar a prova|Proposem que una planta creixerà més si rep més hores de llum
+Variable independent|factor que es modifica deliberadament en un experiment|Donem diferents quantitats de llum a plantes i mantenim igual la resta de condicions
+Variable dependent|factor que es mesura com a resultat d’un experiment|Mesurem l’altura final de les plantes sotmeses a diferents hores de llum
+Variable controlada|factor que es manté igual per fer una comparació justa|Totes les plantes de l’experiment reben la mateixa quantitat d’aigua
+Rèplica experimental|repetició de l’experiment en diverses unitats per valorar la variabilitat|Cultivem cinc plantes en cada condició i no només una
+Conclusió científica|interpretació dels resultats en relació amb la pregunta inicial|Després d’analitzar les mesures, expliquem si donen suport a la hipòtesi
+Mineral|sòlid natural inorgànic de composició i estructura característiques|Estudiem un cristall de quars i les seves propietats
+Roca|material natural format per un o diversos minerals|Observem en un granit cristalls de quars, feldspat i mica
+Roca ígnia|roca formada per solidificació de magma o lava|La lava es refreda i forma basalt
+Roca sedimentària|roca formada per acumulació i transformació de sediments|Grans de sorra es compacten i cimenten formant gres
+Roca metamòrfica|roca transformada per pressió o temperatura sense arribar a fondre’s|Una calcària es transforma en marbre sense fondre’s
+Meteorització|alteració o fragmentació de roques al mateix lloc|L’aigua que es congela en una esquerda fragmenta una roca sense transportar-la
+Erosió|desgast i arrencada de materials per agents externs|Un riu arrenca fragments de les roques del seu llit
+Transport sedimentari|desplaçament de fragments de roca o sòl|Un riu arrossega sorra cap a la desembocadura
+Sedimentació|deposició de materials transportats quan disminueix l’energia del medi|La sorra s’acumula quan el corrent del riu perd força
+Fòssil|resta o senyal d’activitat d’un organisme del passat conservat geològicament|Identifiquem una petjada de dinosaure preservada en una roca
+Escorça terrestre|capa sòlida més externa de la Terra|Situem la capa superficial sobre la qual hi ha continents i fons oceànics
+Mantell terrestre|capa de la Terra situada entre l’escorça i el nucli|Estudiem la capa de roques situada sota l’escorça i damunt del nucli
+Nucli terrestre|regió més interna de la Terra rica en ferro i níquel|Localitzem el centre del planeta, format principalment per ferro i níquel
+Aqüífer|formació geològica que emmagatzema i permet circular aigua subterrània|Un pou extreu aigua d’una capa permeable saturada del subsòl
+`);
+bankFacts('bio',2,'Biodiversitat i classificació','La classificació agrupa els éssers vius segons trets compartits i parentiu. Compara tipus de cèl·lules, nutrició i reproducció; reconeix grans grups i protegeix la biodiversitat.',`
+Bacteri|organisme unicel·lular procariota, sense nucli delimitat per membrana|Observem un microorganisme cel·lular sense nucli ni orgànuls membranosos
+Protozou|eucariota unicel·lular heteròtrof com l’ameba|Una ameba unicel·lular captura partícules d’aliment
+Alga|organisme eucariota fotosintètic, generalment aquàtic i sense arrels veritables|Observem un organisme aquàtic fotosintètic que no té arrels ni flors
+Fong|eucariota heteròtrof que absorbeix nutrients i no fa la fotosíntesi|Una floridura creix sobre pa i absorbeix nutrients
+Molsa|planta sense vasos conductors veritables que es reprodueix per espores|Observem una petita planta sense flors ni vasos conductors veritables en un mur humit
+Falguera|planta vascular sense llavors que es reprodueix per espores|Una planta amb frondes té estructures productores d’espores al revers de les fulles
+Gimnosperma|planta amb llavors no tancades dins d’un fruit|Un pi produeix llavors en pinyes i no en fruits
+Angiosperma|planta amb flors i llavors tancades dins d’un fruit|Una pomera fa flors i pomes amb llavors a l’interior
+Porífer|animal aquàtic senzill amb porus i alimentació per filtració|Identifiquem una esponja que filtra aigua a través dels seus porus
+Cnidari|animal com una medusa amb cèl·lules especialitzades urticants|Una medusa captura aliment amb tentacles que tenen cèl·lules urticants
+Anèl·lid|animal de cos tou dividit en segments repetits|Un cuc de terra presenta el cos dividit en anells
+Mol·lusc|animal de cos tou, sovint protegit per una closca|Un cargol té cos tou, peu muscular i closca
+Artròpode|animal amb exoesquelet i apèndixs articulats|Observem un animal amb potes articulades i una coberta externa rígida
+Equinoderm|animal marí com l’estrella de mar, amb esquelet intern calcari|Una estrella de mar adulta presenta simetria radial i plaques calcàries
+Peix|vertebrat aquàtic amb brànquies i aletes|Una sardina respira per brànquies i es desplaça amb aletes
+Amfibi|vertebrat de pell nua que sovint passa per una fase larvària aquàtica|Un capgròs es transforma en una granota adulta
+Rèptil|vertebrat de pell seca amb escates com el llangardaix|Observem un llangardaix amb escates seques
+Au|vertebrat amb plomes|Una oreneta té plomes, bec i extremitats anteriors transformades en ales
+Mamífer|vertebrat les femelles del qual tenen glàndules mamàries|Una cria de dofí s’alimenta de la llet de la mare
+Espècie invasora|espècie introduïda que s’expandeix i causa impactes sobre l’ecosistema receptor|Una espècie transportada a una illa s’estén i desplaça organismes autòctons
+`);
+bankFacts('soc',0,'','',`
+Equador|paral·lel de latitud zero que separa els hemisferis nord i sud|Situem la línia de referència de la latitud a 0°
+Meridià de Greenwich|meridià de longitud zero que serveix de referència|Busquem la línia de referència a partir de la qual mesurem la longitud est i oest
+Latitud|distància angular d’un lloc a l’equador|Una coordenada indica 41° nord; estudiem què representa
+Longitud|distància angular d’un lloc al meridià de Greenwich|Una coordenada indica 2° est; estudiem què representa
+Hemisferi nord|meitat de la Terra situada al nord de l’equador|Situem Barcelona en la meitat terrestre que queda per sobre de l’equador als mapes habituals
+Rosa dels vents|representació de les direccions principals d’orientació|En un mapa, una figura assenyala nord, sud, est i oest
+Escala cartogràfica|relació entre una distància al mapa i la distància real|Un mapa indica 1:50.000 per relacionar longituds dibuixades i reals
+Llegenda cartogràfica|explicació dels símbols utilitzats en un mapa|Consultem què significa una línia blava discontínua al plànol
+Corba de nivell|línia que uneix punts de la mateixa altitud|En un mapa de relleu, seguim una línia que uneix punts a 500 metres
+Altitud|distància vertical d’un lloc respecte del nivell mitjà del mar|Un cim és a 1.200 metres sobre el nivell del mar
+Serralada|conjunt de muntanyes alineades o relacionades|Situem els Pirineus com un conjunt extens de muntanyes
+Plana|extensió de terreny amb desnivells poc marcats|Descrivim un paisatge ampli sense grans pendents
+Vall|depressió allargada entre elevacions sovint recorreguda per un riu|Un riu circula per una zona baixa entre muntanyes
+Península|porció de terra envoltada d’aigua excepte per una connexió amb el continent|Un territori s’uneix a la resta del continent per un istme
+Illa|porció de terra envoltada d’aigua per tots els costats|Identifiquem Menorca per la seva separació aquàtica de totes les terres properes
+Arxipèlag|conjunt d’illes properes|Estudiem les Balears com un grup d’illes
+Temps atmosfèric|estat de l’atmosfera en un lloc i moment concrets|Descrivim que avui a Girona plou i fa vent
+Clima|patrons atmosfèrics característics d’un lloc durant períodes llargs|Analitzem com són habitualment els estius d’una regió al llarg de dècades
+Precipitació|aigua que cau de l’atmosfera en forma líquida o sòlida|Mesurem la pluja i la neu que han caigut en una comarca
+Climograma|gràfic que representa temperatures i precipitacions mitjanes mensuals|Comparem barres de pluja i una línia de temperatures per a dotze mesos
+`);
+bankFacts('soc',1,'','',`
+Font primària|testimoni produït en l’època que s’estudia|Estudiem una moneda romana original per investigar Roma
+Font secundària|interpretació posterior elaborada a partir d’altres fonts|Llegim un manual actual sobre l’antic Egipte
+Arqueologia|disciplina que estudia societats a partir de les seves restes materials|Un equip excava un poblat i analitza ceràmiques i estructures
+Cronologia|ordenació temporal de fets històrics|Organitzem diversos esdeveniments del més antic al més recent
+Segle|període de cent anys|Agrupem els anys 1201 a 1300 en una mateixa unitat temporal
+Mil·lenni|període de mil anys|Comparem grans etapes en unitats de mil anys
+Paleolític|etapa prehistòrica de societats caçadores i recol·lectores amb eines de pedra tallada|Estudiem un grup nòmada que viu de caçar i recol·lectar i talla sílex
+Neolític|etapa en què s’estenen l’agricultura, la ramaderia i formes de vida sedentàries|Una comunitat cultiva cereals, cria animals i s’estableix en un poblat
+Sedentarisme|forma de vida amb establiment habitual en un lloc|Un grup deixa de desplaçar el campament periòdicament i habita un poblat permanent
+Nomadisme|forma de vida que implica desplaçaments periòdics entre llocs|Un grup trasllada sovint el campament per seguir recursos estacionals
+Agricultura|cultiu de plantes per obtenir aliments i altres productes|Una comunitat sembra blat i en recull les espigues
+Ramaderia|cria i manteniment d’animals domesticats|Una comunitat cria cabres per obtenir llet i altres productes
+Excedent|part de la producció que supera les necessitats immediates|Després d’alimentar-se, un poblat conserva gra per intercanviar-lo
+Especialització del treball|dedicació de persones a tasques productives diferents|En un poblat hi ha persones que fan ceràmica i altres que cultiven
+Edat dels metalls|etapa prehistòrica caracteritzada per l’extensió de la metal·lúrgia|Augmenta l’ús d’eines de coure, bronze i després ferro
+Mesopotàmia|regió històrica situada entre els rius Tigris i Eufrates|Situem les ciutats sumèries en les terres entre el Tigris i l’Eufrates
+Escriptura cuneïforme|sistema d’escriptura mesopotàmic amb signes en forma de falca|Observem signes impresos amb un càlam sobre una tauleta d’argila sumèria
+Faraó|sobirà de l’antic Egipte amb poder polític i funcions religioses|Identifiquem la figura que governava l’antic Egipte i era vinculada als déus
+Jeroglífics|sistema d’escriptura egipci amb signes figuratius|Llegim inscripcions egípcies que combinen signes amb formes d’éssers i objectes
+Nil|riu al voltant del qual es va desenvolupar la civilització egípcia|Estudiem les crescudes del riu que fertilitzaven els camps d’Egipte
+`);
+bankFacts('soc',2,'Grècia i Roma antigues','Situa Grècia i Roma en el Mediterrani. Compara institucions, grups socials, formes de vida i patrimoni; diferencia les formes antigues de participació de les democràcies actuals.',`
+Polis|ciutat estat grega amb territori i institucions pròpies|Atenes i Esparta s’organitzen com a comunitats polítiques independents
+Àgora|espai públic central de moltes ciutats gregues|Atenencs es troben en una plaça per comerciar i debatre
+Acròpoli|recinte elevat d’una ciutat grega amb funcions defensives i religioses|Situem els temples principals d’Atenes en el turó fortificat
+Democràcia atenenca|règim antic de participació directa limitat als homes lliures amb ciutadania|A l’Atenes clàssica, els ciutadans homes decideixen en assemblea i moltes persones en queden excloses
+Oligarquia|govern en què el poder es concentra en un grup reduït|Les decisions polítiques queden en mans d’un petit grup privilegiat
+Colònia grega|assentament fundat per grecs fora de la polis d’origen|Comerciants grecs funden Empòrion a la costa de l’actual Catalunya
+Politeisme|creença en diverses divinitats|Una comunitat ret culte a Zeus, Atena i altres déus
+Mite|relat tradicional amb personatges divins o heroics que explica aspectes del món|Una narració explica l’origen d’un fenomen mitjançant accions de déus grecs
+Jocs Olímpics antics|competicions celebrades a Olímpia en honor de Zeus|Atletes de diverses polis es reuneixen al santuari d’Olímpia
+Alexandre el Gran|rei de Macedònia que va construir un gran imperi al segle IV aC|Un rei macedoni estén el seu domini fins a territoris d’Àsia després de conquerir l’Imperi persa
+República romana|etapa romana amb magistratures i institucions sense rei|Estudiem els cònsols i el Senat abans del poder dels emperadors
+Imperi romà|etapa en què l’autoritat principal es concentra en l’emperador|August inicia una etapa de govern imperial a Roma
+Senat romà|consell polític de gran influència format principalment per membres de l’elit|Analitzem el consell d’antics magistrats que intervenia en la política romana
+Patricis|membres de les famílies aristocràtiques de la Roma antiga|Estudiem famílies romanes d’origen aristocràtic amb privilegis tradicionals
+Plebeus|persones lliures de Roma que no pertanyien al patriciat|Analitzem el grup de ciutadans lliures que reivindicava drets davant els patricis
+Romanització|procés d’extensió de llengua, institucions i costums romans|En un territori conquerit s’estenen el llatí, les ciutats i el dret romans
+Calçada romana|via construïda per connectar ciutats i facilitar el transport|Una via pavimentada uneix assentaments de l’Imperi
+Aqüeducte romà|construcció destinada a conduir aigua fins a una població|Un canal sobre arcs porta aigua des d’una font fins a una ciutat romana
+Amfiteatre|edifici romà de planta oval destinat a espectacles com les lluites de gladiadors|A Tàrraco, el públic observa combats en un recinte oval amb grades
+Termes|banys públics romans amb diverses sales i temperatures|Habitants d’una ciutat romana visiten un complex de banys calents i freds
+`);
+bankFacts('fq',0,'','',`
+Massa|magnitud que quantifica la inèrcia d’un cos i s’expressa en quilograms al SI|Utilitzem una balança per determinar quants quilograms té una mostra
+Volum|espai que ocupa un cos|Mesurem amb una proveta quants mil·lilitres ocupa un líquid
+Densitat|relació entre la massa i el volum d’una substància|Dividim els grams d’una mostra pels seus centímetres cúbics
+Temperatura|magnitud relacionada amb l’estat tèrmic d’un cos|Utilitzem un termòmetre per saber a quants graus és l’aigua
+Estat sòlid|estat de la matèria amb forma i volum propis a escala macroscòpica|Un bloc de gel manté la forma quan el posem sobre un plat fred
+Estat líquid|estat amb volum pràcticament constant i forma del recipient|L’aigua pren la forma del got però no s’expandeix per ocupar tota una habitació
+Estat gasós|estat sense forma ni volum propis que tendeix a ocupar el recipient|L’aire s’expandeix fins a ocupar l’espai disponible en un recipient
+Fusió|canvi d’estat de sòlid a líquid|Un glaçó es converteix en aigua líquida
+Solidificació|canvi d’estat de líquid a sòlid|L’aigua líquida es transforma en gel al congelador
+Vaporització|canvi d’estat de líquid a gas|L’aigua líquida passa a vapor
+Condensació|canvi d’estat de gas a líquid|El vapor d’aigua forma gotes sobre un vidre fred
+Sublimació|canvi directe de sòlid a gas|El gel sec passa directament a diòxid de carboni gasós
+Substància pura|material amb composició definida format per una sola substància química|Una mostra conté només aigua destil·lada, sense altres substàncies afegides
+Mescla homogènia|mescla que presenta un aspecte uniforme a l’escala d’observació|La sal es dissol completament en l’aigua i no en distingim els components
+Mescla heterogènia|mescla en què es poden distingir components o fases|En un recipient s’observen dues capes separades d’aigua i oli
+Filtració|separació d’un sòlid insoluble d’un fluid mitjançant un filtre|Separem sorra d’aigua fent passar la mescla per paper de filtre
+Decantació|separació de fases per diferència de densitat després de deixar reposar|Separem aigua i oli amb un embut de decantació
+Destil·lació|separació basada en diferents temperatures de vaporització amb condensació posterior|Evaporem i després condensem l’aigua per separar-la d’una dissolució salina
+Imantació|separació d’un component atret per un imant|Traiem llimadures de ferro d’una mescla amb sorra utilitzant un imant
+Solut|substància que es dissol en un dissolvent|En dissoldre una petita quantitat de sal en aigua, identifiquem el paper de la sal
+`);
+bankFacts('fq',1,'','',`
+Metre|unitat del SI per mesurar longitud|Expressem la longitud d’una taula amb la unitat bàsica de longitud del SI
+Quilogram|unitat del SI per mesurar massa|Expressem la massa d’una motxilla amb la unitat bàsica de massa del SI
+Segon|unitat del SI per mesurar temps|Expressem la durada d’una cursa amb la unitat bàsica de temps del SI
+Quilòmetre|unitat de longitud equivalent a mil metres|Volem expressar una distància de mil metres amb una sola unitat
+Centímetre|unitat de longitud equivalent a una centèsima de metre|Mesurem una longitud igual a 0,01 metres
+Mil·lilitre|unitat de volum equivalent a una mil·lèsima de litre|Mesurem un volum igual a 0,001 litres
+Joule|unitat del SI per mesurar energia|Expressem en la unitat SI l’energia transferida a un objecte
+Energia cinètica|energia associada al moviment|Una pilota que es desplaça té energia pel fet de moure’s
+Energia potencial gravitatòria|energia associada a la posició en un camp gravitatori|Un llibre col·locat en un prestatge elevat pot perdre energia en caure
+Energia química|energia associada a l’estructura i les transformacions químiques de les substàncies|Una pila proporciona energia gràcies a reaccions químiques internes
+Transferència de calor|pas d’energia entre cossos per una diferència de temperatura|Un got calent cedeix energia a l’aire més fred
+Conducció tèrmica|transferència d’energia per interaccions entre parts d’un material sense moviment global del material|Una cullera metàl·lica s’escalfa des de l’extrem submergit en sopa calenta
+Convecció|transferència d’energia amb moviment de masses de fluid|En una olla, l’aigua escalfada puja i l’aigua més freda baixa
+Radiació tèrmica|transferència d’energia mitjançant ones electromagnètiques|Rebem energia del Sol a través de l’espai
+Aïllant tèrmic|material que dificulta el pas de calor|Un mànec de material aïllant redueix l’escalfament de la mà
+Font renovable|font d’energia que es regenera en escales humanes d’ús|Aprofitem el vent per generar electricitat sense esgotar-lo com un combustible
+Combustible fòssil|recurs energètic com el carbó, el petroli o el gas natural|Una central crema carbó format a partir de matèria orgànica antiga
+Conservació de l’energia|principi segons el qual l’energia total d’un sistema aïllat es manté|En analitzar una transformació, comptem l’energia útil i la transferida a l’entorn
+Eficiència energètica|relació entre energia útil obtinguda i energia consumida|Comparem dos aparells que fan la mateixa tasca amb consums diferents
+Error de mesura|diferència entre una mesura i el valor de referència quan aquest es coneix|Comparem una lectura amb un patró conegut i quantifiquem la desviació
+`);
+bankFacts('fq',2,'Forces, moviment i electricitat','Descriu trajectòries i velocitats senzilles. Una força pot canviar el moviment o deformar un cos. En un circuit, diferencia intensitat, tensió, resistència i connexions.',`
+Trajectòria|camí que segueix un cos quan es mou|Dibuixem el recorregut d’una pilota des que surt de la mà fins que cau
+Rapidesa mitjana|quocient entre la distància recorreguda i el temps emprat|Dividim 60 metres entre els 12 segons que s’ha trigat a recórrer-los
+Moviment rectilini|moviment amb trajectòria en línia recta|Un carro circula per un tram completament recte d’una via
+Moviment circular|moviment amb trajectòria en forma de circumferència|Un punt de la vora d’una roda gira al voltant del seu eix
+Força|interacció capaç de modificar el moviment o deformar un cos|Una empenta accelera un carro que estava aturat
+Newton|unitat del SI per mesurar força|Expressem la intensitat d’una força amb la unitat SI corresponent
+Pes|força gravitatòria exercida sobre un cos|La Terra atrau una motxilla cap al seu centre
+Fregament|força de contacte que s’oposa al lliscament relatiu entre superfícies|Una capsa que llisca sobre el terra es frena per contacte
+Deformació elàstica|canvi de forma que es recupera en retirar la força dins del límit elàstic|Un ressort recupera la longitud inicial quan deixem d’estirar-lo suaument
+Deformació permanent|canvi de forma que es manté després de retirar la força|Una bola de plastilina queda aixafada després de prémer-la
+Corrent elèctric|moviment ordenat de càrregues elèctriques|En un circuit tancat circulen càrregues pel conductor
+Intensitat elèctrica|quantitat de càrrega que passa per unitat de temps|Mesurem amb un amperímetre la càrrega que travessa un punt cada segon
+Tensió elèctrica|diferència de potencial elèctric entre dos punts|Una pila té una diferència de potencial indicada en volts
+Resistència elèctrica|oposició d’un component al pas del corrent|Un component limita el corrent del circuit i el caracteritzem en ohms
+Conductor elèctric|material que permet amb facilitat el moviment de càrregues|El coure de l’interior d’un cable facilita el pas del corrent
+Aïllant elèctric|material que dificulta el moviment de càrregues|El plàstic que recobreix un cable dificulta el pas del corrent cap a la mà
+Circuit obert|circuit amb el camí conductor interromput|Un interruptor separa els contactes i la bombeta s’apaga
+Circuit tancat|circuit amb un camí conductor complet|Tanquem l’interruptor i la bombeta connectada a la pila s’encén
+Connexió en sèrie|connexió amb components en un únic camí de corrent|Dues bombetes comparteixen un únic camí i en treure’n una s’interromp tot el circuit
+Connexió en paral·lel|connexió amb components en branques entre els mateixos dos punts|Dues bombetes estan en branques diferents i una pot continuar encesa si l’altra es desconnecta
+`);
+bankFacts('cat',0,'','',`
+Emissor|qui produeix un missatge|La Jana escriu un avís per a la classe; identifiquem el seu paper com a autora
+Receptor|qui rep i interpreta un missatge|El grup llegeix l’avís de la Jana; identifiquem el seu paper com a destinatari
+Canal|el mitjà físic o suport pel qual es transmet un missatge|Una conversa arriba als oients a través de l’aire; estudiem el mitjà de transmissió
+Codi|el sistema de signes compartit en una comunicació|Dues persones utilitzen la llengua de signes catalana; estudiem el sistema de signes
+Registre formal|manera d’expressar-se adequada a situacions institucionals o de poca confiança|Una alumna inicia una sol·licitud amb «Benvolguda directora»
+Registre informal|manera d’expressar-se habitual en situacions de confiança|Un amic envia «Ei, quedem després?» al seu grup d’amistats
+Text narratiu|text que relata fets protagonitzats per personatges|Un conte explica com una excursionista es perd i torna a casa
+Text descriptiu|text que presenta característiques d’una persona, objecte o lloc|Un escrit detalla el color, les finestres i la forma d’una casa
+Text instructiu|text que ordena passos per fer una tasca|Una recepta indica primer pelar les patates i després coure-les
+Text expositiu|text que explica informació sobre un tema|Un article explica com es formen els núvols
+Text argumentatiu|text que defensa una idea amb raons|Una carta defensa ampliar el pati perquè falta espai per jugar
+Idea principal|informació central al voltant de la qual s’organitza un text|En resumir una notícia, triem el seu fet central i deixem els detalls secundaris
+Informació explícita|informació expressada directament en un text|L’avís diu literalment «la biblioteca tanca a les sis» i en recuperem l’hora
+Inferència|conclusió raonada a partir de pistes del text|El relat no diu que plou, però la protagonista obre el paraigua i evita els bassals
+Fet verificable|afirmació que es pot contrastar amb dades|«La reunió va començar a les cinc» es contrasta amb l’acta
+Opinió|valoració personal sobre una qüestió|«Aquest conte és el més emocionant del món» expressa una preferència
+Resum|versió breu que conserva les idees essencials|Reduïm un article a cinc línies sense afegir-hi valoracions
+Títol|expressió que encapçala un text i n’orienta la lectura|Escrivim «La vida dels dofins» abans d’un article sobre aquests animals
+Font d’informació|origen d’on s’obté una dada o notícia|Indiquem que les dades de pluja provenen d’un observatori meteorològic
+Contrast de fonts|comparació d’informacions de procedències diferents|Abans de compartir una notícia, comparem el que expliquen diversos mitjans fiables
+`);
+bankFacts('cat',2,'Lèxic, cohesió i escriptura','Organitza les idees en paràgrafs. Els connectors expressen relacions entre idees; els pronoms eviten repeticions. Revisa el vocabulari, l’ortografia i la puntuació.',`
+Sinònims|paraules amb significats iguals o pròxims en un context|En un text sobre una casa, substituïm «bonica» per «preciosa»
+Antònims|paraules de significat oposat|Comparem els significats de «fred» i «calent»
+Família de paraules|conjunt de mots que comparteixen una arrel|Agrupem «flor», «florista» i «floreria» perquè comparteixen l’arrel flor
+Camp semàntic|conjunt de paraules relacionades amb un mateix àmbit de significat|Agrupem «violí», «flauta» i «tambor» com a instruments
+Prefix|element que s’afegeix davant d’una arrel|A «desfer», analitzem l’element des- davant de fer
+Sufix|element que s’afegeix al final d’una arrel|A «florista», analitzem l’element -ista després de flor
+Paraula composta|mot format per la combinació de dues o més bases|Analitzem «para-sol», format a partir de para i sol
+Polisèmia|presència de diversos significats relacionats en un mateix mot|La paraula «fulla» designa una part de la planta i una làmina d’un ganivet
+Sentit literal|interpretació d’una expressió segons el seu significat directe|«La sopa és calenta» descriu la temperatura real del menjar
+Sentit figurat|ús expressiu que va més enllà del significat directe|«Té un cor d’or» expressa bondat i no descriu el material del cor
+Connector de causa|expressió que introdueix el motiu d’un fet|A «No sortim perquè plou», observem la funció de perquè
+Connector de conseqüència|expressió que introdueix el resultat d’un fet|A «Plou; per tant, ens quedem», observem la funció de per tant
+Connector d’oposició|expressió que contraposa dues idees|A «És petit, però és resistent», observem la funció de però
+Connector d’addició|expressió que afegeix informació|A «Llegeix i, a més, escriu contes», observem la funció de a més
+Connector d’ordre|expressió que situa passos o idees en una seqüència|«Primer prepara el material; després, comença» ordena les accions
+Paràgraf|unitat escrita que agrupa oracions entorn d’una idea|Separem en blocs la presentació, les causes i les conseqüències d’un fenomen
+Pronoms|paraules que poden substituir o referir-se a un grup nominal|A «La Laia arriba; ella porta els llibres», ella es refereix a la Laia
+Coherència|relació de sentit entre les idees d’un text|Eliminem una frase sobre futbol d’un text que explica només com cuidar una planta
+Punt i seguit|signe que separa oracions dins d’un mateix paràgraf|Tanquem una oració i continuem el mateix paràgraf amb una altra idea relacionada
+Coma d’enumeració|signe que separa elements d’una llista|A «Hi ha pomes, peres i raïm», estudiem el signe entre pomes i peres
+`);
+bankFacts('cas',0,'','',`
+Emisor|quien produce un mensaje|Ana escribe un aviso para su clase; identificamos su papel como autora
+Receptor|quien recibe e interpreta un mensaje|Los compañeros leen el aviso de Ana; identificamos su papel como destinatarios
+Canal|medio físico o soporte por el que se transmite un mensaje|En una llamada, estudiamos el medio por el que llega la voz
+Código|sistema de signos compartido en una comunicación|Dos personas se comunican mediante la lengua de signos española; estudiamos ese sistema
+Registro formal|forma de expresarse adecuada a situaciones institucionales o de poca confianza|Una solicitud a la directora empieza por «Estimada directora»
+Registro informal|forma de expresarse habitual entre personas de confianza|Un amigo escribe «¡Hola! ¿Quedamos luego?» en su grupo
+Narración|texto que cuenta hechos protagonizados por personajes|Un cuento relata cómo una viajera pierde el tren y encuentra otra ruta
+Descripción|texto que presenta características de un ser, lugar u objeto|Un párrafo detalla el color, el tamaño y las ventanas de una casa
+Instrucción|texto que explica pasos para realizar una tarea|Una receta indica lavar, cortar y cocinar las verduras
+Exposición|texto que explica información sobre un tema|Un artículo explica cómo se forman las nubes
+Argumentación|texto que defiende una idea mediante razones|Una carta propone más árboles porque dan sombra al patio
+Idea principal|información central de un texto|Para resumir una noticia, seleccionamos su hecho central
+Información explícita|información que el texto expresa directamente|El aviso dice literalmente «cerramos a las seis» y recuperamos esa hora
+Inferencia|conclusión razonada que se obtiene a partir de pistas|El personaje abre un paraguas y evita los charcos; deducimos que llueve
+Hecho verificable|afirmación que se puede contrastar con datos|Comprobamos en un acta que la reunión empezó a las cinco
+Opinión|valoración personal sobre una cuestión|«Esta novela es maravillosa» expresa una valoración
+Resumen|versión breve que conserva las ideas esenciales|Reducimos un artículo a cinco líneas sin añadir valoraciones
+Destinatario|persona o grupo al que se dirige intencionadamente un texto|Una circular empieza por «A las familias del alumnado»; identificamos a quién va dirigida
+Fuente de información|origen del que procede una información|Indicamos que las cifras de lluvia proceden de un observatorio
+Contraste de fuentes|comparación de informaciones de distintas procedencias|Comparamos varios medios fiables antes de compartir una noticia
+`);
+bankFacts('cas',2,'Léxico, cohesión y ortografía','Organiza las ideas en párrafos, utiliza conectores y revisa las tildes. Distingue relaciones de significado y adapta las palabras al contexto.',`
+Sinónimos|palabras con significados iguales o próximos en un contexto|Sustituimos «bonito» por «hermoso» al describir un paisaje
+Antónimos|palabras con significados opuestos|Comparamos «frío» y «caliente»
+Familia de palabras|conjunto de palabras que comparten una raíz|Agrupamos «pan», «panadero» y «panadería» por su raíz
+Campo semántico|conjunto de palabras de un mismo ámbito de significado|Agrupamos «violín», «flauta» y «tambor» como instrumentos
+Prefijo|elemento que se añade delante de una raíz|En «deshacer», analizamos des- delante de hacer
+Sufijo|elemento que se añade detrás de una raíz|En «florista», analizamos -ista detrás de flor
+Palabra compuesta|palabra formada a partir de dos o más bases|Analizamos «sacapuntas», formado a partir de saca y puntas
+Polisemia|existencia de varios significados relacionados en una palabra|«Hoja» puede designar una parte de la planta o una lámina de papel
+Sentido literal|interpretación directa de una expresión|«La sopa está caliente» describe su temperatura real
+Sentido figurado|uso expresivo que supera el significado directo|«Tiene un corazón de oro» expresa bondad
+Conector causal|expresión que introduce el motivo de un hecho|En «No salimos porque llueve», estudiamos porque
+Conector consecutivo|expresión que introduce el resultado de un hecho|En «Llueve; por tanto, nos quedamos», estudiamos por tanto
+Conector adversativo|expresión que contrapone ideas|En «Es pequeño, pero resistente», estudiamos pero
+Conector aditivo|expresión que añade información|En «Lee y, además, escribe cuentos», estudiamos además
+Conector de orden|expresión que organiza una secuencia|«Primero prepara el material; después empieza» ordena acciones
+Párrafo|unidad de texto que agrupa oraciones sobre una idea|Separamos la presentación, las causas y las consecuencias en bloques escritos
+Palabra aguda|palabra cuya sílaba tónica es la última|En «canción», la sílaba que suena con más fuerza es ción
+Palabra llana|palabra cuya sílaba tónica es la penúltima|En «mesa», la sílaba que suena con más fuerza es me
+Palabra esdrújula|palabra cuya sílaba tónica es la antepenúltima|En «música», la sílaba que suena con más fuerza es mú
+Coma enumerativa|signo que separa elementos de una lista|En «Trae pan, leche y fruta», estudiamos el signo entre pan y leche
+`);
+bankFacts('eng',1,'','',`
+There is|s’utilitza per indicar que hi ha una cosa en singular|Completa «___ a lamp in the room» amb l’expressió que indica existència
+There are|s’utilitza per indicar que hi ha diverses coses|Completa «___ three chairs in the kitchen» amb l’expressió d’existència
+Some|determinant que pot acompanyar un nom plural en una afirmació|Completa «There are ___ apples in the bowl» en una afirmació sobre quantitat indefinida
+Any|determinant habitual en negacions amb noms plurals o incomptables|Completa «There aren’t ___ apples left» amb el determinant habitual de la negació
+Under|preposició que significa a sota de|El gat és sota la taula; completa «The cat is ___ the table»
+Between|preposició que indica una posició entre dos elements|La biblioteca és entre l’escola i el parc; completa «The library is ___ the school and the park»
+Behind|preposició que significa darrere de|El gos és darrere la porta; completa «The dog is ___ the door»
+In front of|expressió que significa davant de|Hi ha un arbre davant de la casa; completa «There is a tree ___ the house»
+Next to|expressió que significa al costat de|La cadira és al costat del llit; completa «The chair is ___ the bed»
+On|preposició que indica contacte amb la part superior d’una superfície|El llibre descansa sobre la taula; completa «The book is ___ the table»
+In|preposició que indica a dins de|Les claus són dins de la bossa; completa «The keys are ___ the bag»
+I am reading|present continuous amb subjecte I i el verb read|Completa «I ___ now» amb el verb read en present continuous
+She is swimming|present continuous amb subjecte she i el verb swim|Completa «She ___ now» amb el verb swim en present continuous
+They are playing|present continuous amb subjecte they i el verb play|Completa «They ___ now» amb el verb play en present continuous
+He is not sleeping|negació en present continuous amb he i sleep|Nega «He is sleeping» mantenint el present continuous
+Are you listening?|pregunta en present continuous amb you i listen|Transforma «You are listening» en pregunta
+Is she cooking?|pregunta en present continuous amb she i cook|Transforma «She is cooking» en pregunta
+We are writing|present continuous amb we i write|Completa «We ___ a story now» amb write en present continuous
+They are not running|negació en present continuous amb they i run|Nega «They are running» mantenint el present continuous
+Now|adverbi que significa ara|En «I am drawing now», volem identificar la paraula que situa l’acció en aquest moment
+`);
+function englishQuestions(topic){
+ const verbs=[['play','plays','played','football'],['watch','watches','watched','films'],['visit','visits','visited','the museum'],['like','likes','liked','music'],['need','needs','needed','a pencil'],['want','wants','wanted','a sandwich'],['use','uses','used','a computer'],['open','opens','opened','the window'],['close','closes','closed','the door'],['clean','cleans','cleaned','the room'],['help','helps','helped','a friend'],['cook','cooks','cooked','dinner'],['wash','washes','washed','the dishes'],['study','studies','studied','English'],['carry','carries','carried','a bag'],['finish','finishes','finished','the exercise'],['start','starts','started','a project'],['paint','paints','painted','a picture'],['collect','collects','collected','stamps'],['enjoy','enjoys','enjoyed','the concert'],['read','reads','read','a book'],['write','writes','wrote','a letter'],['buy','buys','bought','some bread'],['eat','eats','ate','an apple'],['make','makes','made','a cake']];
+ const out=[];
+ verbs.forEach(([base,third,past,obj],i)=>{
+  const data={family:'english-verb-'+base},add=(text,right,wrong,why,skill)=>out.push(bankItem(text,right,wrong,why,skill,data));
+  if(topic===0){
+   add('Present simple: She ___ '+obj+' every week.',third,[base,base+'ing'],'Amb she, el present simple afirmatiu afegeix -s o -es: '+third+'.','Present simple afirmatiu');
+   add('Tria la pregunta correcta per preguntar pel seu hàbit amb «he» i «'+base+'».','Does he '+base+' '+obj+'?',['Does he '+third+' '+obj+'?','Do he '+base+' '+obj+'?'],'Després de does, el verb va en forma base.','Preguntes amb does');
+   add('Nega: «He '+third+' '+obj+'.»','He does not '+base+' '+obj+'.',['He does not '+third+' '+obj+'.','He do not '+base+' '+obj+'.'],'La negació amb he és does not + forma base.','Negació del present simple');
+   add('Completa en present simple: They ___ '+obj+' every week.',base,[third,base+'ing'],'Amb they utilitzem la forma base, sense -s.','Concordança verbal');
+  }else{
+   add('Past simple: Yesterday, she ___ '+obj+'.',past,[third,'does '+base],'En afirmativa, el passat de '+base+' és '+past+'.','Passat simple afirmatiu');
+   add('Nega en past simple: «She '+past+' '+obj+'.»','She did not '+base+' '+obj+'.',['She did not '+third+' '+obj+'.','She does not '+base+' '+obj+'.'],'Did not va seguit de la forma base.','Negació del passat simple');
+   add('Pregunta en past simple amb «they» i «'+base+'».','Did they '+base+' '+obj+'?',['Do they '+base+' '+obj+'?','Did they '+third+' '+obj+'?'],'En passat, la pregunta comença amb did i el verb va en forma base.','Preguntes amb did');
+   add('Quina frase amb «we» situa «'+base+' '+obj+'» en el passat?','We '+past+' '+obj+' yesterday.',['We '+base+' '+obj+' every day.','We will '+base+' '+obj+' tomorrow.'],'Yesterday significa ahir i situa l’acció en el passat.','Marcadors temporals');
+  }
+ });return out;
+}
+bankFacts('fra',0,'','',`
+Bonjour|salutació francesa habitual durant el dia|Vols traduir «bon dia» al francès
+Bonsoir|salutació francesa utilitzada al vespre|Vols traduir «bon vespre» al francès
+Salut|salutació francesa informal entre persones de confiança|Trobes una amiga i vols dir-li hola de manera informal
+Au revoir|expressió francesa de comiat|Vols traduir «adeu» al francès sense concretar una nova trobada
+À demain|expressió francesa que significa fins demà|Et tornes a trobar amb algú l’endemà i ho indiques en acomiadar-te
+Merci|expressió francesa d’agraïment|Algú t’ajuda i vols donar-li les gràcies en francès
+S’il vous plaît|expressió de cortesia amb tractament de vous|Demanes un llibre educadament a una persona desconeguda
+Pardon|expressió francesa per demanar disculpes breument|Topes accidentalment amb algú i demanes disculpes en francès
+Je m’appelle Léa|frase per presentar el propi nom com a Léa|Vols dir «em dic Léa» en francès
+Comment tu t’appelles ?|pregunta informal per saber el nom d’algú|Vols preguntar a un company com es diu en francès
+J’ai douze ans|frase que expressa que tens dotze anys|Vols dir la teva edat, dotze anys, en francès
+Quel âge as-tu ?|pregunta per saber l’edat d’algú|Vols preguntar quants anys té un company en francès
+Je suis de Barcelone|frase que expressa que ets de Barcelona|Vols dir d’on ets i la teva ciutat d’origen és Barcelona
+Comment ça va ?|pregunta que demana com es troba algú|Vols preguntar de manera quotidiana com està una persona
+Ça va bien|resposta que expressa que et trobes bé|Algú et pregunta com estàs i vols dir que estàs bé en francès
+Oui|paraula francesa que expressa afirmació|Et demanen si entens una explicació i vols respondre afirmativament
+Non|paraula francesa que expressa negació|Et pregunten si tens un llibre i vols respondre negativament
+Je ne comprends pas|frase francesa per dir que no entens una cosa|No has entès la pregunta i ho comuniques en francès
+Répétez, s’il vous plaît|petició cortesa perquè algú repeteixi el que ha dit|Necessites sentir de nou una explicació i ho demanes amb vous
+Enchanté|fórmula francesa que expressa plaer en conèixer algú, en masculí|Un noi acaba de conèixer una persona i vol dir «encantat»
+`);
+bankFacts('fra',1,'','',`
+Un livre|un llibre|Vols anomenar en francès un volum que pots llegir
+Un cahier|una llibreta|Vols anomenar en francès el quadern on prens apunts
+Un crayon|un llapis|Vols demanar en francès un estri d’escriptura de grafit
+Une gomme|una goma d’esborrar|Vols anomenar en francès l’objecte que esborra el llapis
+Une règle|un regle|Vols anomenar en francès un instrument per traçar rectes i mesurar
+Un sac|una bossa|Vols dir bossa en francès, sense especificar que sigui una motxilla
+La porte|la porta|Vols anomenar en francès l’element que obres per entrar a l’aula
+La fenêtre|la finestra|Vols anomenar en francès l’obertura envidrada de la paret
+La chaise|la cadira|Vols anomenar en francès el seient individual amb respatller
+La table|la taula|Vols anomenar en francès el moble de superfície plana on treballes
+Le lundi|el dilluns|Vols dir en francès el dia que va després del diumenge
+Le mardi|el dimarts|Vols dir en francès el dia que va després del dilluns
+Le mercredi|el dimecres|Vols dir en francès el dia que va després del dimarts
+Le jeudi|el dijous|Vols dir en francès el dia que va després del dimecres
+Le vendredi|el divendres|Vols dir en francès el dia que va després del dijous
+Le samedi|el dissabte|Vols dir en francès el dia que va després del divendres
+Le dimanche|el diumenge|Vols dir en francès el dia que va després del dissabte
+Il y a|expressió francesa que indica hi ha|Vols completar «___ un livre sur la table» per dir que hi ha un llibre
+Dans|preposició francesa que significa dins de|Vols dir que el llibre és dins la bossa, amb «le livre est ___ le sac»
+Sur|preposició francesa que significa sobre en contacte amb una superfície|Vols dir que el llibre descansa sobre la taula, amb «le livre est ___ la table»
+`);
+bankFacts('fra',2,'Famille, descriptions et goûts','Utilitza être per descriure, avoir per l’edat i aimer per les preferències. Els adjectius concorden amb el nom. Practica també el vocabulari de la família.',`
+La mère|la mare|Vols dir mare en francès
+Le père|el pare|Vols dir pare en francès
+La sœur|la germana|Vols dir germana en francès
+Le frère|el germà|Vols dir germà en francès
+La grand-mère|l’àvia|Vols dir àvia en francès
+Le grand-père|l’avi|Vols dir avi en francès
+La cousine|la cosina|Vols dir cosina en francès
+Le cousin|el cosí|Vols dir cosí en francès
+Je suis grand|frase que significa sóc alt, dita per un noi|Un noi vol dir en francès que és alt
+Elle est grande|frase que significa ella és alta|Vols descriure una noia com a alta en francès
+Il est petit|frase que significa ell és baix o petit|Vols descriure un noi com a baix en francès
+Ils sont contents|frase que significa ells estan contents|Vols descriure un grup masculí o mixt com a content en francès
+Les yeux bleus|expressió francesa que significa els ulls blaus|Vols indicar en francès el color blau dels ulls
+Les cheveux noirs|expressió francesa que significa els cabells negres|Vols indicar en francès que els cabells són negres
+J’aime la musique|frase que expressa que t’agrada la música|Vols dir en francès que t’agrada la música
+Je n’aime pas le foot|frase que expressa que no t’agrada el futbol|Vols negar en francès que t’agrada el futbol
+Tu aimes lire ?|pregunta informal per saber si agrada llegir|Vols preguntar en francès a un company si li agrada llegir
+Nous sommes amis|frase que significa som amics|Parles d’un grup que t’inclou i vols dir en francès que sou amics
+Elle a treize ans|frase que expressa que ella té tretze anys|Vols dir en francès que una noia té tretze anys
+Mon frère|expressió que significa el meu germà|Vols referir-te al teu germà en francès amb un possessiu
+`);
+function bankFacts(subject,topic,title,lesson,rows){
+ BANK_FACTS[subject+'-'+topic]={title,lesson,facts:rows.trim().split('\n').filter(Boolean).map(r=>r.split('|').map(x=>x.trim()))};
+}
+function bankItem(text,correct,wrong,explanation,skill,data={}){
+ const options=[correct,...wrong.filter(x=>x!==correct)].filter((v,i,a)=>a.indexOf(v)===i).slice(0,3);
+ if(options.length!==3)throw Error('Opcions insuficients: '+text);
+ return {text,options,answer:0,explanation,skill,data,contentVersion:BANK_VERSION};
+}
+function factQuestions(subject,topic,bank){
+ const f=bank.facts,n=f.length,out=[];
+ for(let i=0;i<n;i++){
+  const [label,definition,scenario]=f[i],[l1,d1,s1]=f[(i+1)%n],[l2,d2,s2]=f[(i+3)%n];
+  const data={conceptId:subject+'-'+topic+'-concept-'+i,concept:label};
+  const add=(text,right,wrong,why,template)=>out.push(bankItem(text,right,wrong,why,label,{...data,template}));
+  add('Situació: '+scenario+' Quin concepte o expressió hi correspon?',label,[l1,l2],label+': '+definition+'.','apply');
+  add('Quina descripció de «'+label+'» és correcta?',definition,[d1,d2],definition+'. Exemple: '+scenario,'define');
+  add('Quina situació exemplifica «'+label+'»?',scenario,[s1,s2],label+' es relaciona amb '+definition+'.','recognise-example');
+  add('Revisa aquestes fitxes sobre «'+label+'». Quina associació és correcta?',label+' — '+definition,[label+' — '+d1,label+' — '+d2],label+' significa: '+definition+'.','match');
+  add('Una revisió inclou «'+label+'». Quina de les tres afirmacions conté un error?',label+' — '+d1,[l1+' — '+d1,l2+' — '+d2],'La fitxa de '+label+' s’ha de corregir: '+definition+'. Les altres dues associacions són correctes.','detect-error');
+ }
+ return out;
+}
+function numeric(text,value,distractors,explanation,skill,data){return bankItem(text,String(value),distractors.map(String),explanation,skill,data)}
+function mathQuestions(topic){
+ const out=[];
+ for(let n=1;n<=100;n++){
+  const a=2+(n%17),b=2+(Math.floor(n/5)%9),c=1+(n%7),kind=(n-1)%10;
+  let text,value,bad,why,skill;
+  if(topic===0){
+   const tasks=[
+    ()=>{value=a+b*c;text='Calcula: '+a+' + '+b+' × '+c;bad=[(a+b)*c,value+1,value-1];why='Primer '+b+' × '+c+' = '+b*c+'; després suma '+a+'.';skill='Jerarquia d’operacions'},
+    ()=>{value=a*b-c;text='Calcula: '+a+' × '+b+' − '+c;bad=[a*(b-c),value+2,value-2];why='Primer la multiplicació; després resta '+c+'.';skill='Jerarquia d’operacions'},
+    ()=>{value=-a+b;text='Al matí hi ha −'+a+' °C. La temperatura puja '+b+' graus. Quina temperatura hi ha ara (°C)?';bad=[a+b,-a-b,value+1];why='Una pujada se suma: −'+a+' + '+b+' = '+value+'.';skill='Nombres enters'},
+    ()=>{value=a*c;text='Quants euros són '+c+' bosses de '+a+' € cadascuna?';bad=[a+c,value+1,value-1];why='Multiplica el preu de cada bossa pel nombre de bosses.';skill='Problemes multiplicatius'},
+    ()=>{value=a;text='Reparteixes '+a*b+' adhesius en '+b+' grups iguals. Quants adhesius hi ha en cada grup?';bad=[a+1,b+a,a-1];why=a*b+' dividit entre '+b+' és '+a+'.';skill='Divisió i repartiment'},
+    ()=>{value=a*a;text='Quant val '+a+'²?';bad=[2*a,a*a+1,a*a-1];why='El quadrat és '+a+' × '+a+'.';skill='Potències'},
+    ()=>{value=a*c;text='Calcula '+c+'/'+b+' de '+a*b+'.';bad=[a*b*c,a+c,value+1];why='Divideix '+a*b+' entre '+b+' i multiplica el resultat per '+c+'.';skill='Fracció d’una quantitat'},
+    ()=>{value=c;text='Calcula ('+a+' + '+b+') × '+c+' ÷ '+(a+b)+'.';bad=[c+1,c+2,c+3];why='El factor '+(a+b)+' es multiplica i després es divideix; queda '+c+'.';skill='Operacions combinades'},
+    ()=>{value=a+b;text='Un ascensor puja de la planta −'+a+' a la planta '+b+'. Quants pisos recorre?';bad=[Math.abs(a-b),a+b+1,a+b-1];why='De −'+a+' a 0 són '+a+' pisos i de 0 a '+b+' en són '+b+'.';skill='Distància entre enters'},
+    ()=>{value=a*b;text='Una biblioteca rep '+a+' caixes amb '+b+' llibres cadascuna. Quants llibres rep?';bad=[a+b,value+2,value-2];why='Cal multiplicar '+a+' per '+b+'.';skill='Modelització numèrica'}
+   ];tasks[kind]();
+  }else if(topic===1){
+   const tasks=[
+    ()=>{value=a*b;text='Un rectangle té base '+a+' cm i altura '+b+' cm. Quina àrea té (cm²)?';bad=[2*(a+b),a+b,value+1];why='Àrea = base × altura = '+value+' cm².';skill='Àrea del rectangle'},
+    ()=>{value=2*(a+b);text='Un rectangle té costats de '+a+' m i '+b+' m. Quin perímetre té (m)?';bad=[a*b,a+b,value+1];why='Perímetre = 2 × ('+a+' + '+b+') = '+value+' m.';skill='Perímetres'},
+    ()=>{value=a+c;text='Calcula la mitjana de '+a+', '+(a+c)+' i '+(a+2*c)+'.';bad=[a,a+2*c,value+1];why='Suma els tres valors i divideix entre 3.';skill='Mitjana aritmètica'},
+    ()=>{value=a*100;text='Quants centímetres són '+a+' metres?';bad=[a*10,a*1000,a];why='Un metre equival a 100 centímetres.';skill='Canvi d’unitats'},
+    ()=>{value=a*1000;text='Quants metres són '+a+' quilòmetres?';bad=[a*100,a*10,a];why='Un quilòmetre equival a 1.000 metres.';skill='Canvi d’unitats'},
+    ()=>{value=90-a;text='Dos angles sumen 90°. Un fa '+a+'°. Quant fa l’altre?';bad=[180-a,90+a,value+1];why='Resta l’angle conegut de 90°.';skill='Angles complementaris'},
+    ()=>{value=a*b/2;text='Un triangle té base '+(a*2)+' cm i altura '+b+' cm. Quina àrea té (cm²)?';value=a*b;bad=[2*a*b,a+b,value+1];why='Àrea = base × altura / 2 = '+value+' cm².';skill='Àrea del triangle'},
+    ()=>{value=a+2;text='Les dades ordenades són '+a+', '+(a+1)+', '+(a+2)+', '+(a+3)+', '+(a+4)+'. Quina és la mediana?';bad=[a,a+4,value+1];why='La mediana és el valor central d’una llista ordenada.';skill='Mediana'},
+    ()=>{value=a*c;text='En un mapa, 1 cm representa '+a+' km. Quants quilòmetres representen '+c+' cm?';bad=[a+c,value+1,value+2];why='Multiplica els centímetres per '+a+' km per centímetre.';skill='Escales'},
+    ()=>{value=a*b;text='Una graella té '+a+' files i '+b+' columnes. Quantes caselles té?';bad=[a+b,2*(a+b),value+1];why='Cada fila té '+b+' caselles i hi ha '+a+' files.';skill='Comptatge i superfície'}
+   ];tasks[kind]();
+  }else{
+   const tasks=[
+    ()=>{value=a;text='Resol: x + '+b+' = '+(a+b)+'.';bad=[a+b,a+2*b,a+1];why='Resta '+b+' als dos membres: x = '+a+'.';skill='Equacions additives'},
+    ()=>{value=a;text='Resol: '+b+'x = '+(a*b)+'.';bad=[a*b,a+b,a+1];why='Divideix els dos membres entre '+b+'.';skill='Equacions multiplicatives'},
+    ()=>{value=a;text='Resol: x − '+b+' = '+(a-b)+'.';bad=[a-2*b,a+b,a+1];why='Suma '+b+' als dos membres.';skill='Equacions additives'},
+    ()=>{value=a+c*4;text='Una successió comença '+a+', '+(a+c)+', '+(a+2*c)+', '+(a+3*c)+'. Quin és el cinquè terme?';bad=[a+5*c,a+3*c,value+1];why='A cada pas se suma '+c+'.';skill='Patrons numèrics'},
+    ()=>{value=a*c;text='Si un quadern costa '+a+' €, quant costen '+c+' quaderns?';bad=[a+c,value+1,value+2];why='El preu és proporcional al nombre de quaderns.';skill='Proporcionalitat directa'},
+    ()=>{value=a*10;text='Quant és el 10 % de '+a*100+'?';bad=[a,a*100,a*20];why='El 10 % és una desena part: divideix entre 10.';skill='Percentatges'},
+    ()=>{value=a;text='Si y = 2x + '+b+' i x = '+a+', quant val y?';value=2*a+b;bad=[a+b,2*(a+b),value+1];why='Substitueix x i calcula 2 × '+a+' + '+b+'.';skill='Expressions algebraiques'},
+    ()=>{value=a*b;text='Una recepta per a '+b+' persones necessita '+a*b+' g d’arròs. Quants grams calen per a '+(2*b)+' persones?';value=2*a*b;bad=[a*b,a*b+2*b,value+1];why='El nombre de persones es duplica; també es duplica l’arròs.';skill='Proporcionalitat directa'},
+    ()=>{value=a;text='Resol: '+b+'x + '+c+' = '+(a*b+c)+'.';bad=[a+1,a*b,a+c];why='Primer resta '+c+' i després divideix entre '+b+'.';skill='Equacions de dos passos'},
+    ()=>{value=a*3;text='Una entrada de '+a*4+' € té una rebaixa del 25 %. Quin és el preu final (€)?';bad=[a,a*4+a,value+1];why='El 25 % és una quarta part ('+a+' €). Resta-la del preu inicial.';skill='Descomptes'}
+   ];tasks[kind]();
+  }
+  out.push(numeric(text,value,bad,why,skill,{family:'math-'+topic+'-'+kind,parameters:{a,b,c}}));
+ }
+ return out;
+}
+const GRAMMAR={
+ cat:[
+ ['El gos petit','gos','dorm','petit','al sofà'],['La nena curiosa','nena','llegeix','curiosa','a la biblioteca'],['Els ocells blaus','ocells','canten','blaus','al jardí'],['La mestra amable','mestra','explica','amable','a l’aula'],['El tren ràpid','tren','arriba','ràpid','a l’estació'],['Les flors vermelles','flors','creixen','vermelles','al parc'],['El cuiner jove','cuiner','treballa','jove','a la cuina'],['La gata negra','gata','salta','negra','sobre la cadira'],['Els alumnes atents','alumnes','escolten','atents','a classe'],['La pluja fina','pluja','cau','fina','sobre el bosc'],['El músic alegre','músic','canta','alegre','a l’escenari'],['Les corredores valentes','corredores','entrenen','valentes','a la pista'],['La bicicleta nova','bicicleta','descansa','nova','al garatge'],['Els peixos petits','peixos','neden','petits','a l’estany'],['El vent fred','vent','bufa','fred','a la muntanya'],['La noia tranquil·la','noia','pinta','tranquil·la','al taller'],['Els veïns simpàtics','veïns','conversen','simpàtics','al carrer'],['La tortuga lenta','tortuga','camina','lenta','pel jardí'],['El pagès treballador','pagès','sembra','treballador','al camp'],['Les estrelles llunyanes','estrelles','brillen','llunyanes','al cel']],
+ cas:[
+ ['El perro pequeño','perro','duerme','pequeño','en el sofá'],['La niña curiosa','niña','lee','curiosa','en la biblioteca'],['Los pájaros azules','pájaros','cantan','azules','en el jardín'],['La profesora amable','profesora','explica','amable','en el aula'],['El tren rápido','tren','llega','rápido','a la estación'],['Las flores rojas','flores','crecen','rojas','en el parque'],['El cocinero joven','cocinero','trabaja','joven','en la cocina'],['La gata negra','gata','salta','negra','sobre la silla'],['Los alumnos atentos','alumnos','escuchan','atentos','en clase'],['La lluvia fina','lluvia','cae','fina','sobre el bosque'],['El músico alegre','músico','canta','alegre','en el escenario'],['Las corredoras valientes','corredoras','entrenan','valientes','en la pista'],['La bicicleta nueva','bicicleta','descansa','nueva','en el garaje'],['Los peces pequeños','peces','nadan','pequeños','en el estanque'],['El viento frío','viento','sopla','frío','en la montaña'],['La chica tranquila','chica','pinta','tranquila','en el taller'],['Los vecinos simpáticos','vecinos','conversan','simpáticos','en la calle'],['La tortuga lenta','tortuga','camina','lenta','por el jardín'],['El agricultor trabajador','agricultor','siembra','trabajador','en el campo'],['Las estrellas lejanas','estrellas','brillan','lejanas','en el cielo']]
+};
+function grammarQuestions(lang){
+ const out=[];GRAMMAR[lang].forEach(([subject,noun,verb,adj,place],i)=>{
+  const sentence=subject+' '+verb+' '+place+'.',cat=lang==='cat';
+  const prompts=cat?['Quin és el subjecte complet?','Quina és la forma verbal?','Quin és el nom del subjecte?','Quin adjectiu modifica el nom del subjecte?','Quin fragment indica el lloc?']:['¿Cuál es el sujeto completo?','¿Cuál es la forma verbal?','¿Cuál es el sustantivo del sujeto?','¿Qué adjetivo modifica el sustantivo del sujeto?','¿Qué fragmento indica el lugar?'];
+  const answers=[subject,verb,noun,adj,place],wrongs=[[verb,place],[noun,adj],[verb,adj],[noun,verb],[subject,verb]];
+  prompts.forEach((prompt,j)=>out.push(bankItem('«'+sentence+'» '+prompt,answers[j],wrongs[j],cat?['El subjecte concorda amb el verb: '+subject+'.','La forma que expressa l’acció és «'+verb+'».','El nom és «'+noun+'»; l’adjectiu és «'+adj+'».','«'+adj+'» descriu «'+noun+'».','«'+place+'» respon a la pregunta «on?».'][j]:['El sujeto concuerda con el verbo: '+subject+'.','La forma que expresa la acción es «'+verb+'».','El sustantivo es «'+noun+'»; el adjetivo es «'+adj+'».','«'+adj+'» describe a «'+noun+'».','«'+place+'» responde a «¿dónde?».'][j],cat?['Subjecte','Verb','Nom','Adjectiu','Complement de lloc'][j]:['Sujeto','Verbo','Sustantivo','Adjetivo','Complemento de lugar'][j],{family:'grammar-'+i,template:j})));
+ });return out;
+}
+function installExpandedBank(){
+ const third={
+  mat:['Patrons, proporcionalitat i àlgebra','Identifica regularitats, calcula percentatges i expressa relacions amb lletres. Per resoldre una equació, fes la mateixa operació als dos membres.'],
+  eng:['Past simple and short accounts','Use the past simple for finished events. In negatives and questions, did is followed by the base form: did not play, did she play?']
+ };
+ for(const subject of subjects){
+  for(let t=0;t<3;t++){
+   const config=BANK_FACTS[subject.id+'-'+t];
+   if(!subject.topics[t]){
+    const info=third[subject.id];
+    if(!config&&!info)throw Error('Falta el tema 3 de '+subject.id);
+    subject.topics.push({name:config?.title||info[0],lesson:config?.lesson||info[1],qs:[]});
+   }
+   const topic=subject.topics[t];
+   // Original questions retain their IDs, text, solution and content version.
+   for(const q of topic.qs)q.contentVersion=q.contentVersion||'2026-11-16.2';
+   let generated;
+   if(subject.id==='mat')generated=mathQuestions(t);
+   else if((subject.id==='cat'||subject.id==='cas')&&t===1)generated=grammarQuestions(subject.id);
+   else if(subject.id==='eng'&&t!==1)generated=englishQuestions(t);
+   else if(config)generated=factQuestions(subject.id,t,config);
+   else throw Error('Falten activitats: '+subject.id+'-'+t);
+   const signatures=new Set(topic.qs.map(q=>JSON.stringify([q.text,q.options])));
+   for(let i=0;i<generated.length&&topic.qs.length<100;i++){
+    const q=generated[i],signature=JSON.stringify([q.text,q.options]);
+    if(signatures.has(signature))continue;
+    signatures.add(signature);
+    topic.qs.push({...q,id:subject.id+'-'+t+'-bank-'+String(i+1).padStart(3,'0')});
+   }
+   if(topic.qs.length!==100)throw Error('Calen 100 activitats: '+subject.id+' tema '+(t+1)+' té '+topic.qs.length);
+  }
+ }
+}
+installExpandedBank();
 </script><script>/* Browser-local learning records. No network or reconstructed historical answers. */
-const CONTENT_VERSION='2026-11-16.2', STORE_KEY='bruixola-learning-v2';
+const CONTENT_VERSION='2026-11-24.1', STORE_KEY='bruixola-learning-v2';
 const DAILY_BLOCKS=[
  {id:'languages',name:'Llengües',subjects:['cat','cas','eng','fra']},
  {id:'science',name:'Ciència i tecnologia',subjects:['mat','bio','fq','tec']},
@@ -168,8 +1014,20 @@ function seededOrder(items,seed){
  const next=()=>{h+=0x6D2B79F5;let t=h;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296};
  const result=[...items];for(let i=result.length-1;i>0;i--){const j=Math.floor(next()*(i+1));[result[i],result[j]]=[result[j],result[i]]}return result;
 }
-function buildPlan(day,questions){
- return {day,contentVersion:CONTENT_VERSION,blocks:DAILY_BLOCKS.map(b=>({...b,activities:seededOrder(questions.filter(q=>b.subjects.includes(q.subject)),day+'|'+b.id+'|'+CONTENT_VERSION).slice(0,3).map(q=>({...q,options:[...q.options],contentVersion:CONTENT_VERSION}))}))};
+function buildPlan(day,questions,logs=[]){
+ const seen=new Map();for(const a of logs){if(a.type==='answer'||(!a.type&&typeof a.correct==='boolean')){const id=a.activityId||a.qid;seen.set(id,(seen.get(id)||0)+1)}}
+ return {day,contentVersion:CONTENT_VERSION,blocks:DAILY_BLOCKS.map(block=>{
+  const activities=[],usedSubjects=new Set();
+  // One task from each topic in each daily block; preserve already saved plans.
+  for(let topicIndex=0;topicIndex<3;topicIndex++){
+   const pool=questions.filter(q=>block.subjects.includes(q.subject)&&(q.topicIndex===topicIndex||q.topicIndex===undefined));
+   const varied=pool.filter(q=>!usedSubjects.has(q.subject));
+   const ordered=seededOrder(varied.length?varied:pool,day+'|'+block.id+'|'+topicIndex+'|'+CONTENT_VERSION).sort((a,b)=>(seen.get(a.id)||0)-(seen.get(b.id)||0));
+   const q=ordered.find(q=>!activities.some(a=>a.id===q.id));
+   if(q){activities.push({...q,options:[...q.options],contentVersion:q.contentVersion||CONTENT_VERSION});usedSubjects.add(q.subject)}
+  }
+  return {...block,activities};
+ })};
 }
 function completionKey(q){return q.id+'@'+(q.contentVersion||CONTENT_VERSION)}
 function dailySummary(state,day){
@@ -191,41 +1049,46 @@ function markCompleted(state,day,q,at){
  return true;
 }
 function learningExport(state,recovery=null){
- return {app:'Brúixola · 1r ESO',schemaVersion:2,contentVersion:CONTENT_VERSION,exportedAt:new Date().toISOString(),timezone:Intl.DateTimeFormat().resolvedOptions().timeZone,definitions:{dailyGoal:'Tres blocs, tres activitats úniques per bloc. Groc: alguna completada. Verd: mínim dues a cadascun. Estrella: nou.',completed:'Pregunta comprovada almenys una vegada, independentment de l’encert; repetir no suma.',autonomous:'Encert sense pistes ni comentaris previs en aquesta activitat el mateix dia; les exposicions de dies anteriors es registren separadament.',selfReported:'Activitat declarada per l’usuari; correct=null i assessed=false.',legacy:'Es conserven només les dades conegudes. Els camps desconeguts són null; no s’infereixen respostes ni progrés diari antic.'},logs:state.logs,progress:state.progress,dailyPlans:state.plans,dailySummaries:Object.keys(state.plans).sort().map(day=>dailySummary(state,day)),migration:state.migration||null,lastProgressReset:state.lastProgressReset||null,lastLogErasure:state.lastLogErasure||null,recovery};
+ return {app:'Brúixola · 1r ESO',schemaVersion:2,contentVersion:CONTENT_VERSION,exportedAt:new Date().toISOString(),timezone:Intl.DateTimeFormat().resolvedOptions().timeZone,definitions:{dailyGoal:'Tres blocs, tres activitats úniques per bloc. Groc: alguna completada. Verd: mínim dues a cadascun. Estrella: nou.',completed:'Pregunta comprovada almenys una vegada, independentment de l’encert; repetir no suma.',autonomous:'Encert sense pistes ni comentaris previs en aquesta activitat o en una variant identificada del mateix concepte el mateix dia; les exposicions de dies anteriors es registren separadament.',selfReported:'Activitat declarada per l’usuari; correct=null i assessed=false.',legacy:'Es conserven només les dades conegudes. Els camps desconeguts són null; no s’infereixen respostes ni progrés diari antic.'},logs:state.logs,progress:state.progress,dailyPlans:state.plans,dailySummaries:Object.keys(state.plans).sort().map(day=>dailySummary(state,day)),migration:state.migration||null,lastProgressReset:state.lastProgressReset||null,lastLogErasure:state.lastLogErasure||null,recovery};
 }
-</script><script>function about(){main.innerHTML=`<div class="eyebrow">UNA BASE OBERTA A CRÉIXER</div><h1 class="page-title">El mapa d’aprenentatge</h1><div class="prose"><p>Brúixola és un espai de repàs en català orientat a <strong>1r d’ESO</strong>. Aquesta primera versió conté <strong>78 preguntes originals, 26 temes i 13 espais</strong>, amb explicacions per a cada resposta.</p><h2>Referència curricular</h2><p>La selecció parteix dels sabers i l’enfocament competencial publicats a <a href="https://xtec.gencat.cat/ca/curriculum/eso/curriculum-175-2022/" target="_blank" rel="noopener">XTEC · Currículum d’ESO, Decret 175/2022</a>. Consulta de la font: 16 de novembre de 2026.</p><p>El currículum agrupa nombrosos sabers per a 1r i 2n o per a 1r, 2n i 3r. Per això aquesta és una <strong>selecció introductòria proposada</strong>, no un temari oficial exhaustiu ni una distribució obligatòria per a 1r.</p><p>Música, educació plàstica, tecnologia, física i química i educació en valors poden tenir una distribució diferent segons el curs i el centre. El francès s’ofereix com a exemple de segona llengua optativa. Les optatives pròpies del centre, altres llengües, l’aranès a l’Aran i religió, si es cursa, s’adaptaran quan disposem del programa concret.</p><h2>Més enllà de respondre preguntes</h2><p>Els qüestionaris permeten una primera pràctica de comprensió i raonament. No substitueixen l’expressió oral i escrita, les lectures, els experiments, la creació artística, la interpretació musical ni l’activitat física.</p><h2>Quan tinguem els teus temaris</h2><p>Podrem ajustar els blocs, afegir exercicis oberts i problemes, graduar la dificultat i preparar el repàs d’exàmens segons el que treballeu a classe.</p><h2>Què es guarda?</h2><p>Cada resposta registra la pregunta, la resposta triada, la solució, el resultat, el bloc, la data i el temps de resposta. Es desa al navegador d’aquest dispositiu. Si n’esborres les dades, es perdrà el registre; a «Per als adults» el pots exportar en JSON, i a «El meu progrés» en CSV. No s’envien respostes a un servidor.</p></div>`}
+</script><script>function about(){main.innerHTML=`<div class="eyebrow">UNA BASE OBERTA A CRÉIXER</div><h1 class="page-title">El mapa d’aprenentatge</h1><div class="prose"><p>Brúixola és un espai de repàs en català orientat a <strong>1r d’ESO</strong>. El banc conté <strong>${all.length.toLocaleString('ca')} activitats, 39 temes i 13 espais</strong>, amb 100 activitats per tema, amb explicacions per a cada resposta.</p><h2>Referència curricular</h2><p>La selecció parteix dels sabers i l’enfocament competencial publicats a <a href="https://xtec.gencat.cat/ca/curriculum/eso/curriculum-175-2022/" target="_blank" rel="noopener">XTEC · Currículum d’ESO, Decret 175/2022</a>. Base curricular consultada el 16 de novembre de 2026. Banc ampliat el 24 de novembre de 2026.</p><p>El currículum agrupa nombrosos sabers per a 1r i 2n o per a 1r, 2n i 3r. Per això aquesta és una <strong>selecció introductòria proposada</strong>, no un temari oficial exhaustiu ni una distribució obligatòria per a 1r.</p><p>Música, educació plàstica, tecnologia, física i química i educació en valors poden tenir una distribució diferent segons el curs i el centre. El francès s’ofereix com a exemple de segona llengua optativa. Les optatives pròpies del centre, altres llengües, l’aranès a l’Aran i religió, si es cursa, s’adaptaran quan disposem del programa concret.</p><h2>Més enllà de respondre preguntes</h2><p>Els qüestionaris permeten una primera pràctica de comprensió i raonament. No substitueixen l’expressió oral i escrita, les lectures, els experiments, la creació artística, la interpretació musical ni l’activitat física.</p><h2>Cent activitats per tema</h2><p>Cada matèria té tres temes. El tema 3 continua aquesta proposta general i no pretén reproduir la numeració del llibre de l’institut. El banc combina càlculs amb dades diferents, anàlisi gramatical i aplicacions de conceptes. Hi ha variants de pràctica sobre una mateixa habilitat, identificades al registre; cent activitats no vol dir cent conceptes independents.</p><p>Les sessions lliures tenen fins a deu preguntes i prioritzen les menys practicades. El repàs mixt agafa tres de cada tema. Els plans diaris ja desats es conserven; els nous inclouen els tres temes. L’ampliació manté les activitats originals i tot el registre local.</p><h2>Quan tinguem els teus temaris</h2><p>Podrem ajustar els blocs, afegir exercicis oberts i problemes, graduar la dificultat i preparar el repàs d’exàmens segons el que treballeu a classe.</p><h2>Què es guarda?</h2><p>Cada resposta registra la pregunta, la resposta triada, la solució, el resultat, el bloc, la data i el temps de resposta. Es desa al navegador d’aquest dispositiu. Si n’esborres les dades, es perdrà el registre; a «Per als adults» el pots exportar en JSON, i a «El meu progrés» en CSV. No s’envien respostes a un servidor.</p></div>`}
 </script><script>const main=document.querySelector('main'),modal=document.querySelector('dialog');
 const browserStorage={getItem:k=>localStorage.getItem(k),setItem:(k,v)=>localStorage.setItem(k,v)};
 const loaded=loadLearning(browserStorage);let state=loaded.state,storageOK=loaded.ok,recovery=loaded.recovery;
 let session=null,currentView='home',calendarDate=new Date(),visibleDay=localDay(),externalChange=false;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const all=subjects.flatMap(s=>s.topics.flatMap(t=>t.qs.map(q=>({...q,subject:s.id,subjectName:s.name,topic:t.name,skill:t.name,lesson:t.lesson,contentVersion:CONTENT_VERSION}))));
+const all=subjects.flatMap(s=>s.topics.flatMap((t,topicIndex)=>t.qs.map(q=>({...q,subject:s.id,subjectName:s.name,topic:t.name,topicIndex,skill:q.skill||t.name,lesson:q.lesson||t.lesson,contentVersion:q.contentVersion||CONTENT_VERSION}))));
 const answerLogs=()=>state.logs.filter(a=>a.type==='answer'||(!a.type&&typeof a.correct==='boolean'));
+const subjectTotal=id=>all.filter(q=>q.subject===id).length;
+function pickPractice(qs,limit){
+ const seen=new Map();for(const a of answerLogs()){const key=a.activityId||a.qid;seen.set(key,(seen.get(key)||0)+1)}
+ return shuffle(qs).sort((a,b)=>(seen.get(a.id)||0)-(seen.get(b.id)||0)).slice(0,limit);
+}
 const latest=id=>answerLogs().filter(a=>(a.activityId||a.qid)===id).at(-1);
 const count=id=>all.filter(q=>q.subject===id&&latest(q.id)?.correct).length;
 const shuffle=xs=>seededOrder(xs,newId());
 function warning(){return storageOK?'':'<p class="storage-warning" role="alert">El desament ha fallat o hi ha un conflicte amb una altra pestanya. Mantén aquesta pàgina oberta i exporta el registre des de «Per als adults». No es garanteix conservar les dades en sortir.</p>'}
 function refreshWarnings(){for(const id of ['#save-status','#modal-save-status']){const box=document.querySelector(id);if(box)box.innerHTML=warning()}}
 function persist(){if(recovery||externalChange){storageOK=false;refreshWarnings();return false}try{localStorage.setItem(STORE_KEY,JSON.stringify(state));storageOK=true}catch(e){storageOK=false}refreshWarnings();return storageOK}
-function ensurePlan(day=localDay()){if(!state.plans[day]){state.plans[day]=buildPlan(day,all);persist()}return state.plans[day]}
+function ensurePlan(day=localDay()){if(!state.plans[day]){state.plans[day]=buildPlan(day,all,state.logs);persist()}return state.plans[day]}
 function render(v='home'){
  currentView=v;visibleDay=localDay();document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===v));
  if(v==='home')home();if(v==='progress')progress();if(v==='calendar')calendarPage();if(v==='adults')adults();if(v==='about')about();window.scrollTo(0,0);
 }
 function home(){
- ensurePlan();main.innerHTML='<div id="save-status">'+warning()+'</div>'+ `<section class="hero"><div><div class="eyebrow">EL TEU PUNT DE PARTIDA · 1r D’ESO</div><h1>Un món per aprendre.<br>Al teu ritme.</h1><p>Descobreix, practica i connecta idees. Tres activitats de llengües, tres de ciència i tres per entendre el món.</p><button class="primary" id="daily">El repte d’avui · 3 × 3 ↗</button><p class="subtle">Practicar també és equivocar-se i tornar-ho a provar.</p></div><aside id="calendar" aria-label="Calendari de pràctica"></aside></section><div class="stats"><div class="stat"><strong>13</strong> espais per explorar</div><div class="stat"><strong>78</strong> preguntes inicials</div><div class="stat"><strong>${dailySummary(state,localDay()).total}/9</strong> activitats d’avui</div></div><section><div class="section-head"><div><h2>Què vols descobrir avui?</h2><div class="subtle">Totes les matèries, un sol lloc per avançar.</div></div><div class="search"><input id="search" aria-label="Cercar matèria o tema" placeholder="Cerca una matèria o tema…"><select id="filter" aria-label="Filtrar matèries"><option value="all">Tots els espais</option><option value="review">Per reforçar</option><option value="new">Per descobrir</option></select></div></div><div class="grid" id="cards"></div><div class="note">✧ <strong>Una base que creixerà amb tu.</strong> Selecció introductòria orientada a 1r d’ESO, adaptable als teus temaris.</div></section>`;
+ ensurePlan();main.innerHTML='<div id="save-status">'+warning()+'</div>'+ `<section class="hero"><div><div class="eyebrow">EL TEU PUNT DE PARTIDA · 1r D’ESO</div><h1>Un món per aprendre.<br>Al teu ritme.</h1><p>Descobreix, practica i connecta idees. Tres activitats de llengües, tres de ciència i tres per entendre el món.</p><button class="primary" id="daily">El repte d’avui · 3 × 3 ↗</button><p class="subtle">Practicar també és equivocar-se i tornar-ho a provar.</p></div><aside id="calendar" aria-label="Calendari de pràctica"></aside></section><div class="stats"><div class="stat"><strong>${subjects.length}</strong> espais per explorar</div><div class="stat"><strong>${all.length.toLocaleString('ca')}</strong> activitats al banc</div><div class="stat"><strong>${dailySummary(state,localDay()).total}/9</strong> activitats d’avui</div></div><section><div class="section-head"><div><h2>Què vols descobrir avui?</h2><div class="subtle">Totes les matèries, un sol lloc per avançar.</div></div><div class="search"><input id="search" aria-label="Cercar matèria o tema" placeholder="Cerca una matèria o tema…"><select id="filter" aria-label="Filtrar matèries"><option value="all">Tots els espais</option><option value="review">Per reforçar</option><option value="new">Per descobrir</option></select></div></div><div class="grid" id="cards"></div><div class="note">✧ <strong>Una base que creixerà amb tu.</strong> Selecció introductòria orientada a 1r d’ESO, adaptable als teus temaris.</div></section>`;
  document.querySelector('#daily').onclick=()=>openDay(localDay());document.querySelector('#search').oninput=cards;document.querySelector('#filter').onchange=cards;cards();drawCalendar();
 }
 function cards(){
  const query=document.querySelector('#search').value.toLocaleLowerCase('ca'),filter=document.querySelector('#filter').value;
- const list=subjects.filter(s=>(s.name+' '+s.desc+' '+s.topics.map(t=>t.name).join(' ')).toLocaleLowerCase('ca').includes(query)).filter(s=>filter==='all'||(filter==='review'?all.some(q=>q.subject===s.id&&latest(q.id)&&!latest(q.id).correct):count(s.id)<6));
- document.querySelector('#cards').innerHTML=list.length?list.map(s=>`<button class="card" data-subject="${s.id}"><div class="card-top"><span class="icon" style="background:${s.color}">${s.icon}</span><span class="tag">${s.id==='fra'?'OPTATIVA':['fq','val','tec','mus','art'].includes(s.id)?'SEGONS EL CENTRE':'EXPLORA'}</span></div><h3>${s.name}</h3><p>${s.desc}</p><div class="card-bottom"><span>2 temes · 6 preguntes · ${count(s.id)}/6 últims encerts</span><span class="arrow">↗</span></div><div class="bar"><i style="width:${count(s.id)/6*100}%"></i></div></button>`).join(''):'<p class="empty">No hi ha resultats.</p>';
+ const list=subjects.filter(s=>(s.name+' '+s.desc+' '+s.topics.map(t=>t.name).join(' ')).toLocaleLowerCase('ca').includes(query)).filter(s=>filter==='all'||(filter==='review'?all.some(q=>q.subject===s.id&&latest(q.id)&&!latest(q.id).correct):count(s.id)<subjectTotal(s.id)));
+ document.querySelector('#cards').innerHTML=list.length?list.map(s=>`<button class="card" data-subject="${s.id}"><div class="card-top"><span class="icon" style="background:${s.color}">${s.icon}</span><span class="tag">${s.id==='fra'?'OPTATIVA':['fq','val','tec','mus','art'].includes(s.id)?'SEGONS EL CENTRE':'EXPLORA'}</span></div><h3>${s.name}</h3><p>${s.desc}</p><div class="card-bottom"><span>${s.topics.length} temes · ${subjectTotal(s.id)} activitats · ${count(s.id)} últims encerts</span><span class="arrow">↗</span></div><div class="bar"><i style="width:${count(s.id)/subjectTotal(s.id)*100}%"></i></div></button>`).join(''):'<p class="empty">No hi ha resultats.</p>';
  document.querySelectorAll('[data-subject]').forEach(b=>b.onclick=()=>subject(b.dataset.subject));
 }
 function subject(id){
  currentView='subject';const s=subjects.find(s=>s.id===id);
- main.innerHTML='<div id="save-status">'+warning()+'</div>'+ `<button class="back" id="back">← Totes les matèries</button><div class="subject-banner" style="background:${s.color}"><div class="eyebrow">1r D’ESO · ITINERARI INICIAL</div><h1 class="page-title">${s.name}</h1><p>${s.desc}. Llegeix les idees clau i posa-les en pràctica.</p><button class="primary" id="practice-all">Practica els dos temes</button></div><div class="topics">${s.topics.map((t,i)=>`<article class="topic"><span class="eyebrow">TEMA 0${i+1}</span><h3>${t.name}</h3><p>${t.lesson}</p><button class="primary" data-topic="${i}">Practica · 3 preguntes ↗</button></article>`).join('')}</div><p class="subtle">Els exercicis lliures es registren. Només compten al calendari si coincideixen amb alguna de les nou activitats del pla d’avui. Una resposta correcta no demostra que el tema estigui consolidat.</p>`;
- document.querySelector('#back').onclick=()=>render();document.querySelector('#practice-all').onclick=()=>start(all.filter(q=>q.subject===id),s.name);
+ main.innerHTML='<div id="save-status">'+warning()+'</div>'+ `<button class="back" id="back">← Totes les matèries</button><div class="subject-banner" style="background:${s.color}"><div class="eyebrow">1r D’ESO · ITINERARI INICIAL</div><h1 class="page-title">${s.name}</h1><p>${s.desc}. Llegeix les idees clau i posa-les en pràctica.</p><button class="primary" id="practice-all">Repàs mixt · 9 activitats</button></div><div class="topics">${s.topics.map((t,i)=>`<article class="topic"><span class="eyebrow">TEMA 0${i+1}</span><h3>${t.name}</h3><p>${t.lesson}</p><button class="primary" data-topic="${i}">Practica 10 de les ${t.qs.length} activitats</button></article>`).join('')}</div><p class="subtle">Els exercicis lliures es registren. Només compten al calendari si coincideixen amb alguna de les nou activitats del pla d’avui. Una resposta correcta no demostra que el tema estigui consolidat.</p>`;
+ document.querySelector('#back').onclick=()=>render();document.querySelector('#practice-all').onclick=()=>start(s.topics.flatMap((t,i)=>pickPractice(all.filter(q=>q.subject===id&&q.topicIndex===i),3)),s.name);
  document.querySelectorAll('[data-topic]').forEach(b=>b.onclick=()=>start(all.filter(q=>q.subject===id&&q.topic===s.topics[+b.dataset.topic].name),s.topics[+b.dataset.topic].name));window.scrollTo(0,0);
 }
 function calendarPage(){ensurePlan();main.innerHTML='<div id="save-status">'+warning()+'</div><h1 class="page-title">Calendari de pràctica</h1><div class="calendar-page" id="calendar"></div>';drawCalendar()}
@@ -245,7 +1108,7 @@ function openDay(day){
  document.querySelectorAll('[data-block]').forEach(b=>b.onclick=()=>{const block=plan.blocks.find(x=>x.id===b.dataset.block),pending=block.activities.filter(q=>!done[completionKey(q)]);start(pending.length?pending:block.activities,block.name,{daily:true,blockId:block.id})});
 }
 function start(qs,title,options={}){
- if(!qs.length)return;ensurePlan();session={id:newId(),qs:shuffle(qs),title,index:0,day:localDay(),daily:!!options.daily,blockId:options.blockId||null};
+ if(!qs.length)return;ensurePlan();session={id:newId(),qs:options.daily?shuffle(qs):pickPractice(qs,10),title,index:0,day:localDay(),daily:!!options.daily,blockId:options.blockId||null};
  if(!modal.open)modal.showModal();question();
 }
 function changedDailyDay(){
@@ -260,7 +1123,7 @@ function showQuestion(){
 }
 function snapshot(){
  const s=session,q=s.qs[s.index],p=s.presentation;
- return {eventId:newId(),activityId:q.id,qid:q.id,contentVersion:q.contentVersion||CONTENT_VERSION,type:'answer',date:new Date().toISOString(),day:localDay(),localTimestamp:new Date().toString(),timezoneOffsetMinutes:new Date().getTimezoneOffset(),subject:q.subject,subjectName:q.subjectName,topic:q.topic,skill:q.skill||q.topic,sessionId:s.id,presentationId:p.id,dailyBlockId:s.blockId,plannedDay:s.daily?s.day:null,exercise:{type:'multiple-choice',statement:q.text,options:[...q.options],displayedOptions:p.options.map(o=>({...o})),data:null,lesson:q.lesson,explanation:q.explanation},question:q.text,hintsConsulted:p.hints.map(h=>({...h})),hadFeedbackBefore:p.feedbackSeen,priorHelp:p.hints.length>0||p.feedbackSeen,priorExposureCount:answerLogs().filter(a=>(a.activityId||a.qid)===q.id).length,seconds:Math.round((Date.now()-p.started)/1000),assessed:true,selfReported:false};
+ return {eventId:newId(),activityId:q.id,qid:q.id,contentVersion:q.contentVersion||CONTENT_VERSION,type:'answer',date:new Date().toISOString(),day:localDay(),localTimestamp:new Date().toString(),timezoneOffsetMinutes:new Date().getTimezoneOffset(),subject:q.subject,subjectName:q.subjectName,topic:q.topic,skill:q.skill||q.topic,sessionId:s.id,presentationId:p.id,dailyBlockId:s.blockId,plannedDay:s.daily?s.day:null,exercise:{type:'multiple-choice',statement:q.text,options:[...q.options],displayedOptions:p.options.map(o=>({...o})),data:q.data||null,lesson:q.lesson,explanation:q.explanation},question:q.text,hintsConsulted:p.hints.map(h=>({...h})),hadFeedbackBefore:p.feedbackSeen,priorHelp:p.hints.length>0||p.feedbackSeen,priorExposureCount:answerLogs().filter(a=>(a.activityId||a.qid)===q.id).length,seconds:Math.round((Date.now()-p.started)/1000),assessed:true,selfReported:false};
 }
 function hint(){
  if(changedDailyDay())return;const p=session.presentation,q=session.qs[session.index];if(p.locked)return;
@@ -268,8 +1131,8 @@ function hint(){
 }
 function answer(choice){
  if(changedDailyDay())return;const s=session,p=s.presentation;if(p.locked)return;const q=s.qs[s.index];if(!Number.isInteger(choice)||!q.options[choice])return;
- p.locked=true;p.attempt++;const correct=choice===q.answer,event=snapshot(),previous=answerLogs().filter(a=>(a.activityId||a.qid)===q.id),feedbackInSession=previous.some(a=>a.sessionId===s.id&&a.feedbackDelivered),previousHintsToday=state.logs.filter(a=>a.type==='hint'&&a.activityId===q.id&&a.day===event.day),sameDayHelp=previous.some(a=>a.day===event.day&&a.feedbackDelivered)||previousHintsToday.length>0;
- Object.assign(event,{answer:q.options[choice],answerIndex:choice,expected:q.options[q.answer],expectedIndex:q.answer,correct,attemptNumber:p.attempt,lifetimeAttempt:previous.length+1,hadFeedbackBefore:p.feedbackSeen||previous.some(a=>a.feedbackDelivered),feedbackAfterErrorBefore:previous.some(a=>!a.correct&&a.feedbackDelivered),previousHintsToday:previousHintsToday.map(a=>a.hint),priorHelp:event.priorHelp||feedbackInSession||sameDayHelp,autonomous:correct&&!event.priorHelp&&!feedbackInSession&&!sameDayHelp,firstAttempt:p.attempt===1,firstAttemptToday:!previous.some(a=>a.day===event.day),feedbackDelivered:true,feedbackText:q.explanation});
+ p.locked=true;p.attempt++;const correct=choice===q.answer,event=snapshot(),previous=answerLogs().filter(a=>(a.activityId||a.qid)===q.id),feedbackInSession=previous.some(a=>a.sessionId===s.id&&a.feedbackDelivered),previousHintsToday=state.logs.filter(a=>a.type==='hint'&&((a.activityId===q.id)||(q.data?.conceptId&&a.exercise?.data?.conceptId===q.data.conceptId))&&a.day===event.day),conceptFeedback=!!q.data?.conceptId&&answerLogs().some(a=>a.exercise?.data?.conceptId===q.data.conceptId&&a.day===event.day&&a.feedbackDelivered),sameDayHelp=previous.some(a=>a.day===event.day&&a.feedbackDelivered)||previousHintsToday.length>0||conceptFeedback;
+ Object.assign(event,{answer:q.options[choice],answerIndex:choice,expected:q.options[q.answer],expectedIndex:q.answer,correct,attemptNumber:p.attempt,lifetimeAttempt:previous.length+1,hadFeedbackBefore:p.feedbackSeen||previous.some(a=>a.feedbackDelivered),feedbackAfterErrorBefore:previous.some(a=>!a.correct&&a.feedbackDelivered),previousHintsToday:previousHintsToday.map(a=>a.hint),relatedConceptFeedbackToday:conceptFeedback,priorHelp:event.priorHelp||feedbackInSession||sameDayHelp,autonomous:correct&&!event.priorHelp&&!feedbackInSession&&!sameDayHelp,firstAttempt:p.attempt===1,firstAttemptToday:!previous.some(a=>a.day===event.day),feedbackDelivered:true,feedbackText:q.explanation});
  state.logs.push(event);ensurePlan(event.day);markCompleted(state,event.day,q,event.date);persist();
  document.querySelectorAll('[data-answer]').forEach(b=>{b.disabled=true;if(+b.dataset.answer===q.answer)b.classList.add('correct');else if(+b.dataset.answer===choice)b.classList.add('wrong')});document.querySelector('#hint').disabled=true;
  document.querySelector('#feedback').innerHTML=`<div class="feedback ${correct?'':'error'}"><strong>${correct?(event.autonomous?'Encert sense ajuda en aquesta pràctica':'Encert amb ajuda en aquesta pràctica'):'Seguim aprenent.'}</strong><br>${esc(q.explanation)}</div><div class="actions">${!correct?'<button class="secondary" id="retry">Torna-ho a provar amb ajuda</button>':''}<button class="primary" id="next">${s.index+1<s.qs.length?'Següent activitat →':'Veure el resultat'}</button></div>`;
@@ -290,12 +1153,12 @@ function download(data,name,type){const url=URL.createObjectURL(new Blob([data],
 function exportJSON(){download(JSON.stringify(learningExport(state,recovery),null,2),'bruixola-aprenentatge-'+localDay()+'.json','application/json')}
 function exportCSV(){const keys=['date','day','subject','topic','skill','question','answer','expected','correct','attemptNumber','sessionId','autonomous','priorHelp','seconds'],cell=v=>'"'+String(v??'').replace(/"/g,'""')+'"';download('\uFEFF'+[keys,...answerLogs().map(a=>keys.map(k=>a[k]))].map(r=>r.map(cell).join(',')).join('\r\n'),'bruixola-respostes.csv','text/csv;charset=utf-8')}
 function adults(){
- main.innerHTML='<div id="save-status">'+warning()+'</div>'+ `<div class="eyebrow">ACOMPANYAR L’APRENENTATGE</div><h1 class="page-title">Per als adults</h1><div class="prose"><p>Descarrega el registre periòdicament i adjunta el JSON a ChatGPT per analitzar errors recurrents, encerts al primer intent, dependència de pistes i evolució entre dies, i proposar exercicis de reforç.</p><div class="actions"><button class="primary" id="export">Descarregar registre d’aprenentatge (JSON)</button></div><h2>Què es desa?</h2><p>Cada resposta conserva activitat i versió, data local i hora, matèria, tema, habilitat, enunciat, opcions originals i ordre mostrat, resposta triada i correcta, número d’intent, sessió, pistes i comentaris. Les pistes també es registren si no s’arriba a respondre. El JSON inclou els plans exactes i una còpia del progrés.</p><p>El calendari compta activitats úniques comprovades, independentment de l’encert. Groc: alguna activitat. Verd: mínim dues en cadascun dels tres blocs. Estrella: les nou. Repetir no dona punts ni premis addicionals.</p><p>Un encert sense ajuda significa que no s’han consultat pistes ni rebut la solució abans en aquesta activitat durant el mateix dia. Les exposicions de dies anteriors també consten, però permetem observar un nou encert autònom després d’un interval. Llegir teoria abans de començar no es pot determinar retrospectivament. Un sol encert no demostra consolidació.</p><h2>Dades locals, sense compte</h2><p><strong>Les dades només existeixen en aquest navegador i dispositiu.</strong> No hi ha servidor ni sincronització. Esborrar les dades del navegador o utilitzar navegació privada pot fer perdre el registre. Exporta’l periòdicament. Si el desament falla, s’avisa i encara pots exportar el que queda en memòria.</p><p>Conservem les respostes antigues només amb els camps coneguts. No reconstruïm opcions, pistes ni progrés diari que no es van registrar. Els camps desconeguts no es consideren encerts autònoms.</p><h2>Pràctica fora de pantalla</h2><p>La web actual conté qüestionaris, sense activitats manipulatives. Pots declarar una activitat externa: quedarà com a <strong>autodeclarada</strong>, sense considerar-la un encert avaluat ni sumar-la a les nou del calendari.</p><label for="offline-subject">Matèria</label><select id="offline-subject">${subjects.map(s=>`<option value="${s.id}">${s.name}</option>`).join('')}</select><label for="offline-text">Activitat feta (sense dades personals)</label><textarea id="offline-text" maxlength="2000" placeholder="Per exemple: lectura en veu alta durant deu minuts"></textarea><button class="secondary" id="offline-save">Desar com a autodeclarada</button><p id="offline-status" role="status"></p><h2>Controls independents</h2><p>Reiniciar el progrés buida només les marques del calendari. Esborrar el registre elimina respostes i pistes, però conserva el calendari. Després no es reconstrueixen intents a partir de les marques.</p><div class="actions"><button class="secondary" id="reset-progress">Reiniciar el progrés</button><button class="secondary danger" id="erase-logs">Esborrar el registre detallat</button></div></div>`;
+ main.innerHTML='<div id="save-status">'+warning()+'</div>'+ `<div class="eyebrow">ACOMPANYAR L’APRENENTATGE</div><h1 class="page-title">Per als adults</h1><div class="prose"><p>Descarrega el registre periòdicament i adjunta el JSON a ChatGPT per analitzar errors recurrents, encerts al primer intent, dependència de pistes i evolució entre dies, i proposar exercicis de reforç.</p><div class="actions"><button class="primary" id="export">Descarregar registre d’aprenentatge (JSON)</button></div><h2>Què es desa?</h2><p>Cada resposta conserva activitat i versió, data local i hora, matèria, tema, habilitat, enunciat, opcions originals i ordre mostrat, resposta triada i correcta, número d’intent, sessió, pistes i comentaris. Les pistes també es registren si no s’arriba a respondre. El JSON inclou els plans exactes i una còpia del progrés.</p><p>El calendari compta activitats úniques comprovades, independentment de l’encert. Groc: alguna activitat. Verd: mínim dues en cadascun dels tres blocs. Estrella: les nou. Repetir no dona punts ni premis addicionals.</p><p>Un encert sense ajuda significa que no s’han consultat pistes ni rebut la solució abans en aquesta activitat durant el mateix dia. En les variants d’un mateix concepte també es té en compte l’ajuda rebuda en aquell concepte el mateix dia. Les exposicions de dies anteriors també consten, però permetem observar un nou encert autònom després d’un interval. Llegir teoria abans de començar no es pot determinar retrospectivament. Un sol encert no demostra consolidació.</p><h2>Dades locals, sense compte</h2><p><strong>Les dades només existeixen en aquest navegador i dispositiu.</strong> No hi ha servidor ni sincronització. Esborrar les dades del navegador o utilitzar navegació privada pot fer perdre el registre. Exporta’l periòdicament. Si el desament falla, s’avisa i encara pots exportar el que queda en memòria.</p><p>Conservem les respostes antigues només amb els camps coneguts. No reconstruïm opcions, pistes ni progrés diari que no es van registrar. Els camps desconeguts no es consideren encerts autònoms.</p><h2>Pràctica fora de pantalla</h2><p>La web actual conté qüestionaris, sense activitats manipulatives. Pots declarar una activitat externa: quedarà com a <strong>autodeclarada</strong>, sense considerar-la un encert avaluat ni sumar-la a les nou del calendari.</p><label for="offline-subject">Matèria</label><select id="offline-subject">${subjects.map(s=>`<option value="${s.id}">${s.name}</option>`).join('')}</select><label for="offline-text">Activitat feta (sense dades personals)</label><textarea id="offline-text" maxlength="2000" placeholder="Per exemple: lectura en veu alta durant deu minuts"></textarea><button class="secondary" id="offline-save">Desar com a autodeclarada</button><p id="offline-status" role="status"></p><h2>Controls independents</h2><p>Reiniciar el progrés buida només les marques del calendari. Esborrar el registre elimina respostes i pistes, però conserva el calendari. Després no es reconstrueixen intents a partir de les marques.</p><div class="actions"><button class="secondary" id="reset-progress">Reiniciar el progrés</button><button class="secondary danger" id="erase-logs">Esborrar el registre detallat</button></div></div>`;
  document.querySelector('#export').onclick=exportJSON;
  document.querySelector('#reset-progress').onclick=()=>{if(confirm('Vols reiniciar només el progrés del calendari? Es conservaran plans, respostes i pistes. Exporta una còpia abans si la vols conservar.')){state.progress={};state.lastProgressReset=new Date().toISOString();persist();adults()}};
  document.querySelector('#erase-logs').onclick=()=>{if(confirm('Vols esborrar tots els intents i pistes? No es podran recuperar sense una exportació prèvia. Es conservarà el calendari.')){state.logs=[];state.lastLogErasure=new Date().toISOString();if(persist()){try{localStorage.removeItem('bruixola-eso-v1')}catch(e){storageOK=false}}adults()}};
  document.querySelector('#offline-save').onclick=()=>{const text=document.querySelector('#offline-text').value.trim();if(!text){document.querySelector('#offline-status').textContent='Descriu primer l’activitat.';return}
- state.logs.push({eventId:newId(),activityId:'self-'+newId(),contentVersion:CONTENT_VERSION,type:'self-report',sessionId:newId(),attemptNumber:1,date:new Date().toISOString(),day:localDay(),subject:document.querySelector('#offline-subject').value,topic:'Pràctica fora de pantalla',skill:'Autodeclarada, sense avaluació',exercise:{type:'self-reported',statement:text,data:null,options:null},response:{declaredCompleted:true},sessionId:newId(),hintsConsulted:[],selfReported:true,assessed:false,correct:null,expected:null});persist();document.querySelector('#offline-text').value='';document.querySelector('#offline-status').textContent=storageOK?'Activitat autodeclarada desada.':'Registrada en memòria; exporta-la abans de sortir.'};
+ state.logs.push({eventId:newId(),activityId:'self-'+newId(),contentVersion:CONTENT_VERSION,type:'self-report',attemptNumber:1,date:new Date().toISOString(),day:localDay(),subject:document.querySelector('#offline-subject').value,topic:'Pràctica fora de pantalla',skill:'Autodeclarada, sense avaluació',exercise:{type:'self-reported',statement:text,data:null,options:null},response:{declaredCompleted:true},sessionId:newId(),hintsConsulted:[],selfReported:true,assessed:false,correct:null,expected:null});persist();document.querySelector('#offline-text').value='';document.querySelector('#offline-status').textContent=storageOK?'Activitat autodeclarada desada.':'Registrada en memòria; exporta-la abans de sortir.'};
 }
 function checkDay(){if(visibleDay===localDay())return;visibleDay=localDay();ensurePlan();if(session?.daily){changedDailyDay();return}if(!modal.open&&(currentView==='home'||currentView==='calendar'))render(currentView)}
 document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>render(b.dataset.view));document.querySelector('.brand').onclick=e=>{e.preventDefault();render()};document.querySelector('#close').onclick=()=>modal.close();
